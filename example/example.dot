@@ -1,10 +1,46 @@
 digraph cil_rad {
 rankdir = LR;
-node [shape=box];
-"ratings.default"  -> "productpage.default" [ label = "10 /productpage" ];
-"productpage.default"  -> "details.default" [ label = "85 /details/0" ];
-"productpage.default"  -> "reviews.default" [ label = "85 /reviews/0" ];
-"productpage.default"  -> "productpage.default" [ label = "2 /productpagecurl" ];
-"demo-app.default"  -> "productpage.default" [ label = "43 /productpage" ];
-"productpage.default"  -> "productpage.default" [ label = "32 /productpage" ];
+node [shape=oval];
+
+subgraph cluster_productpage_default {
+label="productpage.default";
+productpage_default__productpage[label="/productpage"];
+}
+
+"ratings.default"  -> "productpage_default__productpage" [label = "10" ];
+
+subgraph cluster_details_default {
+label="details.default";
+details_default__details_0[label="/details/0"];
+}
+
+"productpage.default"  -> "details_default__details_0" [label = "85" ];
+
+subgraph cluster_reviews_default {
+label="reviews.default";
+reviews_default__reviews_0[label="/reviews/0"];
+}
+
+"productpage.default"  -> "reviews_default__reviews_0" [label = "85" ];
+
+subgraph cluster_productpage_default {
+label="productpage.default";
+productpage_default__productpagecurl[label="/productpagecurl"];
+}
+
+"productpage.default"  -> "productpage_default__productpagecurl" [label = "2" ];
+
+subgraph cluster_productpage_default {
+label="productpage.default";
+productpage_default__productpage[label="/productpage"];
+}
+
+"demo-app.default"  -> "productpage_default__productpage" [label = "43" ];
+
+subgraph cluster_productpage_default {
+label="productpage.default";
+productpage_default__productpage[label="/productpage"];
+}
+
+"productpage.default"  -> "productpage_default__productpage" [label = "32" ];
 }
