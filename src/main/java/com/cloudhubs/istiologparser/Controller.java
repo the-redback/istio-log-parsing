@@ -19,7 +19,7 @@ import java.util.Map;
 
 public class Controller {
 
-    private Map<Map<String, String>, Integer> FunctionsMap = new HashMap<>();
+    private Map<Map<String, Map<String, String>>, Integer> FunctionsMap = new HashMap<>();
 
     // Save file in format 'service_name.demo' or 'instance_name.demo'
     public String AssumeServiceName(String fullPath) {
@@ -36,9 +36,11 @@ public class Controller {
         return split1.split(".svc.cluster.local")[0];
     }
 
-    public void InsertIntoFunctionMap(String Svc, String DestSvc) {
-        Map<String, String> IntermediateMap = new HashMap<>();
-        IntermediateMap.put(Svc, DestSvc);
+    public void InsertIntoFunctionMap(String Svc, String DestSvc,String endpoint) {
+        Map<String, Map<String, String>> IntermediateMap = new HashMap<>();
+        Map<String, String> SecondInterMap = new HashMap<>();
+        SecondInterMap.put(DestSvc, endpoint);
+        IntermediateMap.put(Svc, SecondInterMap);
 
         Integer count = FunctionsMap.get(IntermediateMap);
         if (count == null) {
@@ -48,6 +50,10 @@ public class Controller {
         }
     }
 
+    /*
+    * ReadSingleFile reads single json file and decodes it and saves
+    * functions calls in FunctionMap map
+    * */
     public void ReadSingleFile(String filename) {
         try {
             // create Gson instance
@@ -85,7 +91,8 @@ public class Controller {
                             continue;
                         }
                         String DestSvc = GetDestinationService(value);
-                        InsertIntoFunctionMap(ServiceName, DestSvc);
+                        String path = (String) map2.get("path");
+                        InsertIntoFunctionMap(ServiceName, DestSvc, path);
                     }
                 }
             }
@@ -121,7 +128,6 @@ public class Controller {
         }
 
         GVGenerator.generate(FunctionsMap);
-
     }
 
     public static boolean isJSONValid(String jsonInString) {

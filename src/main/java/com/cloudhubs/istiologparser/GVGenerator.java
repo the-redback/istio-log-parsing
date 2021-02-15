@@ -19,7 +19,7 @@ public class GVGenerator {
         Graphviz.fromGraph(g).render(Format.SVG).toFile(new File("C:\\Users\\das\\Desktop\\rad.svg"));
     }*/
 
-    public static void generate(Map<Map<String, String>, Integer> FunctionsMap) throws IOException {
+    public static void generate(Map<Map<String, Map<String, String>>, Integer> FunctionsMap) throws IOException {
         StringBuilder graph = new StringBuilder();
         graph.append("digraph cil_rad {").append("\n");
         graph.append("rankdir = LR;").append("\n");
@@ -28,9 +28,11 @@ public class GVGenerator {
         int clusterIndex = 0;
 
         FunctionsMap.forEach((nestedMap,value) -> {
-            nestedMap.forEach((node1, node2) -> {
-                String link = String.format("%s  -> %s [ label = %s ];", addDoubleQuotations(node1), addDoubleQuotations(node2), addDoubleQuotations(String.valueOf(value)));
-                graph.append(link).append("\n");
+            nestedMap.forEach((node1, secondNestedMap) -> {
+                secondNestedMap.forEach((node2, node3) -> {
+                    String link = String.format("%s  -> %s [ label = %s ];", addDoubleQuotations(node1), addDoubleQuotations(node2), addDoubleQuotations(String.valueOf(value) + " "+ node3));
+                    graph.append(link).append("\n");
+                });
             });
         });
 

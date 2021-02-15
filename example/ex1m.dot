@@ -1,7 +1,0 @@
-digraph "example1" {
-"productpage.default" -> "reviews.default"
-"productpage.default" -> "details.default"
-"productpage.default" -> "productpage.default"
-"demo-app.default" -> "productpage.default"
-"ratings.default" -> "productpage.default"
-}
