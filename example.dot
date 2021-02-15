@@ -1,0 +1,9 @@
+digraph cil_rad {
+rankdir = LR;
+node [shape=box];
+productpage.default  -> productpage.default [ label = 34 ];
+productpage.default  -> details.default [ label = 85 ];
+demo-app.default  -> productpage.default [ label = 43 ];
+productpage.default  -> reviews.default [ label = 85 ];
+ratings.default  -> productpage.default [ label = 10 ];
+}
