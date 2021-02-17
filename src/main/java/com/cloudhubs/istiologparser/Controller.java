@@ -42,12 +42,7 @@ public class Controller {
         SecondInterMap.put(DestSvc, endpoint);
         IntermediateMap.put(Svc, SecondInterMap);
 
-        Integer count = FunctionsMap.get(IntermediateMap);
-        if (count == null) {
-            FunctionsMap.put(IntermediateMap, 1);
-        } else {
-            FunctionsMap.put(IntermediateMap, count + 1);
-        }
+        FunctionsMap.merge(IntermediateMap, 1, Integer::sum);
     }
 
     /*
