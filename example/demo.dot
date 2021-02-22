@@ -1,0 +1,12 @@
+digraph example 
+{                                                               
+    rankdir = LR;
+    node[ shape = record ];
+
+    x   [ label = " x | a | b " ];
+    y   [ label = "y | <c>C | <d>D" ];
+
+    // edge
+    x -> y:d [label="70" labelfontcolor="#F12321" ];
+    y -> y:c;
+}

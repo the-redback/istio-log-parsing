@@ -1,0 +1,24 @@
+digraph {
+  rankdir="RL";
+  node[ shape = record ];
+
+  Hero -> Character [ arrowhead="empty" ]
+  Villain -> Character [ arrowhead="empty" ]
+  Hero:a -> Hero:a [taillabel ="asdf" id=0];
+  Hero:b -> Hero:b [label ="asdf" id=1];
+  Hero:c -> Hero:c [label ="asdf" id=2];
+
+      // fields in the label are separated by a |
+  // ending a line in \l left aligns it
+  Hero [ 
+    shape="record"
+    label="<a> Hero|<b>health| <c> save : bool"
+  ]
+
+  // do whatever you want with whitespace
+  Villain [
+    shape="record"
+    label="Villain|health : int|brood() : void"
+  ]
+  Character [ shape="record" ];
+}

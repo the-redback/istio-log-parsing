@@ -1,11 +1,10 @@
 package com.cloudhubs.istiologparser;
 
+import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class GVGenerator {
     /*public static void generate(RadResponseContext radResponseContext) throws IOException {
@@ -20,34 +19,80 @@ public class GVGenerator {
     }*/
 
     public static void generate(Map<Map<String, Map<String, String>>, Integer> FunctionsMap) throws IOException {
+        Map<String, Set<String>> svcGraphMap = new HashMap<String, Set<String>>();
+        Map<String, Boolean> flag = new HashMap();
+
         StringBuilder graph = new StringBuilder();
-        graph.append("digraph cil_rad {").append("\n");
+
+        graph.append("digraph endpoints_istio {").append("\n");
         graph.append("rankdir = LR;").append("\n");
-        graph.append("node [shape=oval];").append("\n");
+        graph.append("node [shape=record];").append("\n");
 
         int clusterIndex = 0;
 
         FunctionsMap.forEach((nestedMap, value) -> {
-            nestedMap.forEach((node1, secondNestedMap) -> {
-                secondNestedMap.forEach((node2, node3) -> {
+            nestedMap.forEach((fromSvc, secondNestedMap) -> {
+                secondNestedMap.forEach((toSvc, toEndPoint) -> {
 
-                    String subGraph = formatNodeName(node2);
-                    String endPoint = formatNodeName(node3);
-                    String subEndPoint = subGraph + "_" + endPoint;
+                    String fromSvcID = formatNodeName(fromSvc);
+                    String toSvcID = formatNodeName(toSvc);
+                    String toEndPointID = formatNodeName(toEndPoint);
+                    String toSubEndPointID = toSvcID + ":" + toEndPoint;
 
+                    String format;
 
-                    graph.append("\n");
+                    String hash = encodeColor();
 
-                    graph.append(String.format("subgraph cluster_%s {", subGraph)).append("\n");
-                    graph.append("label=").append(addDoubleQuotations(node2)).append(";").append("\n");
-                    graph.append(subEndPoint).append(String.format("[label=%s]",addDoubleQuotations(node3))).append(";").append("\n");
-                    graph.append("}").append("\n");
-                    graph.append("\n");
+                    if (fromSvc.equals(toSvc)) {
+                        format = "%s:%s:e  -> %s:%s:e [taillabel = <<font color=\"%s\">%s</font>> arrowhead=\"empty\" color=\"%s\" ];";
+                    } else {
+                        format = "%s:%s:e  -> %s:%s [label = <<font color=\"%s\">%s</font>> arrowhead=\"empty\" color=\"%s\" ];";
+                    }
 
-                    String link = String.format("%s  -> %s [label = %s ];", addDoubleQuotations(node1), addDoubleQuotations(subEndPoint), addDoubleQuotations(String.valueOf(value)));
+                    String link = String.format(format,
+                            fromSvcID, toEndPointID, toSvcID, toEndPointID, hash, addDoubleQuotations(String.valueOf(value)), hash);
+
                     graph.append(link).append("\n");
+
+                    Set<String> set = svcGraphMap.get(toSvc);
+                    if (set == null) {
+                        set = new HashSet<String>();
+                    }
+                    set.add(toEndPoint);
+                    svcGraphMap.put(toSvc, set);
+
+                    if(flag.get(fromSvcID)==null){
+                        graph.append("\n");
+                        graph.append(fromSvcID).append("[").append("\n");
+                        graph.append("shape=\"record\"").append("\n");
+                        graph.append("label=").append(addDoubleQuotations(String.format("<%s> %s", fromSvcID, fromSvc))).append("\n");
+                        graph.append("]").append("\n");
+                        flag.put(fromSvcID,true);
+                    }
                 });
             });
+        });
+
+        System.out.println(svcGraphMap);
+
+
+        svcGraphMap.forEach((Svc, set) -> {
+            String SvcID = formatNodeName(Svc);
+
+            StringBuilder label = new StringBuilder();
+            label.append(String.format("<%s> %s", SvcID, Svc));
+
+            set.forEach((endPoint) -> {
+                String endPointID = formatNodeName(endPoint);
+                label.append(String.format("|<%s> %s", endPointID, endPoint));
+            });
+
+            graph.append("\n");
+            graph.append(SvcID).append("[").append("\n");
+            graph.append("shape=\"record\"").append("\n");
+            graph.append("label=").append(addDoubleQuotations(label.toString())).append("\n");
+            graph.append("]").append("\n");
+
         });
 
         graph.append("}");
@@ -89,6 +134,20 @@ public class GVGenerator {
             m.put(key, new HashSet<>());
         }
         m.get(key).add(value);
+    }
+
+    /**
+     * @return a hex Color string in the format #rrggbb.
+     */
+    private static String encodeColor() {
+        // create random object - reuse this as often as possible
+        Random random = new Random();
+
+        // create a big random number - maximum is ffffff (hex) = 16777215 (dez)
+        int nextInt = random.nextInt(0xffffff + 1);
+
+        // format it as hexadecimal string (with hashtag and leading zeros)
+        return String.format("#%06x", nextInt);
     }
 
 //    private static String getLinkLabel(RestEntity restEntity) {

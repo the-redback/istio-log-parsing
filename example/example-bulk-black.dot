@@ -1,0 +1,64 @@
+digraph endpoints_istio {
+rankdir = LR;
+node [shape=record];
+demo_app_default:_reviews_1:e  -> reviews_default:_reviews_1 [label = <<font color="#000000">"17"</font>> arrowhead="empty" color="#000000" ];
+
+demo_app_default[
+shape="record"
+label="<demo_app_default> demo-app.default"
+]
+productpage_default:_details_1:e  -> details_default:_details_1 [label = <<font color="#000000">"19"</font>> arrowhead="empty" color="#000000" ];
+
+productpage_default[
+shape="record"
+label="<productpage_default> productpage.default"
+]
+productpage_default:_details_0:e  -> details_default:_details_0 [label = <<font color="#000000">"119"</font>> arrowhead="empty" color="#000000" ];
+ratings_default:_reviews_demo:e  -> reviews_default:_reviews_demo [label = <<font color="#000000">"23"</font>> arrowhead="empty" color="#000000" ];
+
+ratings_default[
+shape="record"
+label="<ratings_default> ratings.default"
+]
+demo_app_default:_reviews_0:e  -> reviews_default:_reviews_0 [label = <<font color="#000000">"105"</font>> arrowhead="empty" color="#000000" ];
+ratings_default:_manually_created:e  -> details_default:_manually_created [label = <<font color="#000000">"34"</font>> arrowhead="empty" color="#000000" ];
+demo_app_default:_reviews_false_negative:e  -> reviews_default:_reviews_false_negative [label = <<font color="#000000">"11"</font>> arrowhead="empty" color="#000000" ];
+productpage_default:_manually_created:e  -> details_default:_manually_created [label = <<font color="#000000">"32"</font>> arrowhead="empty" color="#000000" ];
+ratings_default:_details_1:e  -> details_default:_details_1 [label = <<font color="#000000">"19"</font>> arrowhead="empty" color="#000000" ];
+productpage_default:_reviews_demo:e  -> reviews_default:_reviews_demo [label = <<font color="#000000">"23"</font>> arrowhead="empty" color="#000000" ];
+ratings_default:_details_0:e  -> details_default:_details_0 [label = <<font color="#000000">"117"</font>> arrowhead="empty" color="#000000" ];
+productpage_default:_reviews_false_negative:e  -> reviews_default:_reviews_false_negative [label = <<font color="#000000">"11"</font>> arrowhead="empty" color="#000000" ];
+productpage_default:_reviews_0:e  -> reviews_default:_reviews_0 [label = <<font color="#000000">"105"</font>> arrowhead="empty" color="#000000" ];
+demo_app_default:_details_1:e  -> details_default:_details_1 [label = <<font color="#000000">"19"</font>> arrowhead="empty" color="#000000" ];
+productpage_default:_reviews_1:e  -> reviews_default:_reviews_1 [label = <<font color="#000000">"17"</font>> arrowhead="empty" color="#000000" ];
+demo_app_default:_details_0:e  -> details_default:_details_0 [label = <<font color="#000000">"117"</font>> arrowhead="empty" color="#000000" ];
+ratings_default:_reviews_1:e  -> reviews_default:_reviews_1 [label = <<font color="#000000">"17"</font>> arrowhead="empty" color="#000000" ];
+demo_app_default:_reviews_demo:e  -> reviews_default:_reviews_demo [label = <<font color="#000000">"23"</font>> arrowhead="empty" color="#000000" ];
+demo_app_default:_manually_created:e  -> details_default:_manually_created [label = <<font color="#000000">"34"</font>> arrowhead="empty" color="#000000" ];
+ratings_default:_reviews_0:e  -> reviews_default:_reviews_0 [label = <<font color="#000000">"105"</font>> arrowhead="empty" color="#000000" ];
+ratings_default:_reviews_false_negative:e  -> reviews_default:_reviews_false_negative [label = <<font color="#000000">"11"</font>> arrowhead="empty" color="#000000" ];
+ratings_default:_productpage:e  -> productpage_default:_productpage [label = <<font color="#000000">"74"</font>> arrowhead="empty" color="#000000" ];
+demo_app_default:_productpagecurl:e  -> productpage_default:_productpagecurl [label = <<font color="#000000">"4"</font>> arrowhead="empty" color="#000000" ];
+demo_app_default:_reviews_false_positive:e  -> reviews_default:_reviews_false_positive [label = <<font color="#000000">"14"</font>> arrowhead="empty" color="#000000" ];
+productpage_default:_productpage:e  -> productpage_default:_productpage:e [taillabel = <<font color="#000000">"64"</font>> arrowhead="empty" color="#000000" ];
+productpage_default:_reviews_false_positive:e  -> reviews_default:_reviews_false_positive [label = <<font color="#000000">"14"</font>> arrowhead="empty" color="#000000" ];
+productpage_default:_productpagecurl:e  -> productpage_default:_productpagecurl:e [taillabel = <<font color="#000000">"4"</font>> arrowhead="empty" color="#000000" ];
+demo_app_default:_productpage:e  -> productpage_default:_productpage [label = <<font color="#000000">"107"</font>> arrowhead="empty" color="#000000" ];
+ratings_default:_productpagecurl:e  -> productpage_default:_productpagecurl [label = <<font color="#000000">"4"</font>> arrowhead="empty" color="#000000" ];
+ratings_default:_reviews_false_positive:e  -> reviews_default:_reviews_false_positive [label = <<font color="#000000">"14"</font>> arrowhead="empty" color="#000000" ];
+
+details_default[
+shape="record"
+label="<details_default> details.default|<_details_1> /details/1|<_details_0> /details/0|<_manually_created> /manually/created"
+]
+
+reviews_default[
+shape="record"
+label="<reviews_default> reviews.default|<_reviews_1> /reviews/1|<_reviews_0> /reviews/0|<_reviews_false_negative> /reviews/false/negative|<_reviews_false_positive> /reviews/false/positive|<_reviews_demo> /reviews/demo"
+]
+
+productpage_default[
+shape="record"
+label="<productpage_default> productpage.default|<_productpagecurl> /productpagecurl|<_productpage> /productpage"
+]
+}
