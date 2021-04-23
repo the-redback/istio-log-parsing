@@ -1,51 +1,51 @@
 digraph endpoints_istio {
 rankdir = LR;
 node [shape=record];
-demo_app_default:_reviews_1:e  -> reviews_default:_reviews_1 [label = <<font color="#0000">"17"</font>> arrowhead="empty" color="#0000" ];
+demo_app_default:_productpagecurl:e  -> productpage_default:_productpagecurl [label = <<font color="#701ccd">"4"</font>> arrowhead="empty" color="#701ccd" penwidth=0.08333333333333333];
 
 demo_app_default[
 shape="record"
 label="<demo_app_default> demo-app.default"
 ]
-productpage_default:_details_1:e  -> details_default:_details_1 [label = <<font color="#0000">"19"</font>> arrowhead="empty" color="#0000" ];
+productpage_default:_productpagecurl:e  -> productpage_default:_productpagecurl:e [taillabel = <<font color="#e86307">"4"</font>> arrowhead="empty" color="#e86307" penwidth=0.16666666666666666 ];
 
 productpage_default[
 shape="record"
 label="<productpage_default> productpage.default"
 ]
-productpage_default:_details_0:e  -> details_default:_details_0 [label = <<font color="#0000">"119"</font>> arrowhead="empty" color="#0000" ];
-ratings_default:_reviews_demo:e  -> reviews_default:_reviews_demo [label = <<font color="#0000">"23"</font>> arrowhead="empty" color="#0000" ];
+ratings_default:_productpagecurl:e  -> productpage_default:_productpagecurl [label = <<font color="#4a660e">"4"</font>> arrowhead="empty" color="#4a660e" penwidth=0.25];
 
 ratings_default[
 shape="record"
 label="<ratings_default> ratings.default"
 ]
-demo_app_default:_reviews_0:e  -> reviews_default:_reviews_0 [label = <<font color="#0000">"105"</font>> arrowhead="empty" color="#0000" ];
-ratings_default:_manually_created:e  -> details_default:_manually_created [label = <<font color="#0000">"34"</font>> arrowhead="empty" color="#0000" ];
-demo_app_default:_reviews_false_negative:e  -> reviews_default:_reviews_false_negative [label = <<font color="#0000">"11"</font>> arrowhead="empty" color="#0000" ];
-productpage_default:_manually_created:e  -> details_default:_manually_created [label = <<font color="#0000">"32"</font>> arrowhead="empty" color="#0000" ];
-ratings_default:_details_1:e  -> details_default:_details_1 [label = <<font color="#0000">"19"</font>> arrowhead="empty" color="#0000" ];
-productpage_default:_reviews_demo:e  -> reviews_default:_reviews_demo [label = <<font color="#0000">"23"</font>> arrowhead="empty" color="#0000" ];
-ratings_default:_details_0:e  -> details_default:_details_0 [label = <<font color="#0000">"117"</font>> arrowhead="empty" color="#0000" ];
-productpage_default:_reviews_false_negative:e  -> reviews_default:_reviews_false_negative [label = <<font color="#0000">"11"</font>> arrowhead="empty" color="#0000" ];
-productpage_default:_reviews_0:e  -> reviews_default:_reviews_0 [label = <<font color="#0000">"105"</font>> arrowhead="empty" color="#0000" ];
-demo_app_default:_details_1:e  -> details_default:_details_1 [label = <<font color="#0000">"19"</font>> arrowhead="empty" color="#0000" ];
-productpage_default:_reviews_1:e  -> reviews_default:_reviews_1 [label = <<font color="#0000">"17"</font>> arrowhead="empty" color="#0000" ];
-demo_app_default:_details_0:e  -> details_default:_details_0 [label = <<font color="#0000">"117"</font>> arrowhead="empty" color="#0000" ];
-ratings_default:_reviews_1:e  -> reviews_default:_reviews_1 [label = <<font color="#0000">"17"</font>> arrowhead="empty" color="#0000" ];
-demo_app_default:_reviews_demo:e  -> reviews_default:_reviews_demo [label = <<font color="#0000">"23"</font>> arrowhead="empty" color="#0000" ];
-demo_app_default:_manually_created:e  -> details_default:_manually_created [label = <<font color="#0000">"34"</font>> arrowhead="empty" color="#0000" ];
-ratings_default:_reviews_0:e  -> reviews_default:_reviews_0 [label = <<font color="#0000">"105"</font>> arrowhead="empty" color="#0000" ];
-ratings_default:_reviews_false_negative:e  -> reviews_default:_reviews_false_negative [label = <<font color="#0000">"11"</font>> arrowhead="empty" color="#0000" ];
-ratings_default:_productpage:e  -> productpage_default:_productpage [label = <<font color="#0000">"74"</font>> arrowhead="empty" color="#0000" ];
-demo_app_default:_productpagecurl:e  -> productpage_default:_productpagecurl [label = <<font color="#0000">"4"</font>> arrowhead="empty" color="#0000" ];
-demo_app_default:_reviews_false_positive:e  -> reviews_default:_reviews_false_positive [label = <<font color="#0000">"14"</font>> arrowhead="empty" color="#0000" ];
-productpage_default:_productpage:e  -> productpage_default:_productpage:e [taillabel = <<font color="#0000">"64"</font>> arrowhead="empty" color="#0000" ];
-productpage_default:_reviews_false_positive:e  -> reviews_default:_reviews_false_positive [label = <<font color="#0000">"14"</font>> arrowhead="empty" color="#0000" ];
-productpage_default:_productpagecurl:e  -> productpage_default:_productpagecurl:e [taillabel = <<font color="#0000">"4"</font>> arrowhead="empty" color="#0000" ];
-demo_app_default:_productpage:e  -> productpage_default:_productpage [label = <<font color="#0000">"107"</font>> arrowhead="empty" color="#0000" ];
-ratings_default:_productpagecurl:e  -> productpage_default:_productpagecurl [label = <<font color="#0000">"4"</font>> arrowhead="empty" color="#0000" ];
-ratings_default:_reviews_false_positive:e  -> reviews_default:_reviews_false_positive [label = <<font color="#0000">"14"</font>> arrowhead="empty" color="#0000" ];
+demo_app_default:_reviews_false_negative:e  -> reviews_default:_reviews_false_negative [label = <<font color="#0b9e2c">"11"</font>> arrowhead="empty" color="#0b9e2c" penwidth=0.3333333333333333];
+productpage_default:_reviews_false_negative:e  -> reviews_default:_reviews_false_negative [label = <<font color="#fbd463">"11"</font>> arrowhead="empty" color="#fbd463" penwidth=0.41666666666666663];
+ratings_default:_reviews_false_negative:e  -> reviews_default:_reviews_false_negative [label = <<font color="#a30bfe">"11"</font>> arrowhead="empty" color="#a30bfe" penwidth=0.49999999999999994];
+demo_app_default:_reviews_false_positive:e  -> reviews_default:_reviews_false_positive [label = <<font color="#4b88a6">"14"</font>> arrowhead="empty" color="#4b88a6" penwidth=0.5833333333333333];
+productpage_default:_reviews_false_positive:e  -> reviews_default:_reviews_false_positive [label = <<font color="#c2a361">"14"</font>> arrowhead="empty" color="#c2a361" penwidth=0.6666666666666666];
+ratings_default:_reviews_false_positive:e  -> reviews_default:_reviews_false_positive [label = <<font color="#94c9da">"14"</font>> arrowhead="empty" color="#94c9da" penwidth=0.75];
+demo_app_default:_reviews_1:e  -> reviews_default:_reviews_1 [label = <<font color="#5c0f66">"17"</font>> arrowhead="empty" color="#5c0f66" penwidth=0.8333333333333334];
+productpage_default:_reviews_1:e  -> reviews_default:_reviews_1 [label = <<font color="#475afb">"17"</font>> arrowhead="empty" color="#475afb" penwidth=0.9166666666666667];
+ratings_default:_reviews_1:e  -> reviews_default:_reviews_1 [label = <<font color="#acc4e1">"17"</font>> arrowhead="empty" color="#acc4e1" penwidth=1.0];
+productpage_default:_details_1:e  -> details_default:_details_1 [label = <<font color="#e982bb">"19"</font>> arrowhead="empty" color="#e982bb" penwidth=1.0833333333333333];
+ratings_default:_details_1:e  -> details_default:_details_1 [label = <<font color="#c3ed05">"19"</font>> arrowhead="empty" color="#c3ed05" penwidth=1.1666666666666665];
+demo_app_default:_details_1:e  -> details_default:_details_1 [label = <<font color="#8e4214">"19"</font>> arrowhead="empty" color="#8e4214" penwidth=1.2499999999999998];
+ratings_default:_reviews_demo:e  -> reviews_default:_reviews_demo [label = <<font color="#6b8581">"23"</font>> arrowhead="empty" color="#6b8581" penwidth=1.333333333333333];
+productpage_default:_reviews_demo:e  -> reviews_default:_reviews_demo [label = <<font color="#c01a81">"23"</font>> arrowhead="empty" color="#c01a81" penwidth=1.4166666666666663];
+demo_app_default:_reviews_demo:e  -> reviews_default:_reviews_demo [label = <<font color="#a4bfa6">"23"</font>> arrowhead="empty" color="#a4bfa6" penwidth=1.4999999999999996];
+productpage_default:_manually_created:e  -> details_default:_manually_created [label = <<font color="#71cc7d">"32"</font>> arrowhead="empty" color="#71cc7d" penwidth=1.5833333333333328];
+ratings_default:_manually_created:e  -> details_default:_manually_created [label = <<font color="#850278">"34"</font>> arrowhead="empty" color="#850278" penwidth=1.666666666666666];
+demo_app_default:_manually_created:e  -> details_default:_manually_created [label = <<font color="#bcf066">"34"</font>> arrowhead="empty" color="#bcf066" penwidth=1.7499999999999993];
+productpage_default:_productpage:e  -> productpage_default:_productpage:e [taillabel = <<font color="#52ec5e">"64"</font>> arrowhead="empty" color="#52ec5e" penwidth=1.8333333333333326 ];
+ratings_default:_productpage:e  -> productpage_default:_productpage [label = <<font color="#176487">"74"</font>> arrowhead="empty" color="#176487" penwidth=1.9166666666666659];
+demo_app_default:_reviews_0:e  -> reviews_default:_reviews_0 [label = <<font color="#a8cf55">"105"</font>> arrowhead="empty" color="#a8cf55" penwidth=1.9999999999999991];
+productpage_default:_reviews_0:e  -> reviews_default:_reviews_0 [label = <<font color="#ab5b14">"105"</font>> arrowhead="empty" color="#ab5b14" penwidth=2.0833333333333326];
+ratings_default:_reviews_0:e  -> reviews_default:_reviews_0 [label = <<font color="#e6e198">"105"</font>> arrowhead="empty" color="#e6e198" penwidth=2.166666666666666];
+demo_app_default:_productpage:e  -> productpage_default:_productpage [label = <<font color="#759f1c">"107"</font>> arrowhead="empty" color="#759f1c" penwidth=2.2499999999999996];
+ratings_default:_details_0:e  -> details_default:_details_0 [label = <<font color="#c24bb4">"117"</font>> arrowhead="empty" color="#c24bb4" penwidth=2.333333333333333];
+demo_app_default:_details_0:e  -> details_default:_details_0 [label = <<font color="#4b63bc">"117"</font>> arrowhead="empty" color="#4b63bc" penwidth=2.4166666666666665];
+productpage_default:_details_0:e  -> details_default:_details_0 [label = <<font color="#83c8f6">"119"</font>> arrowhead="empty" color="#83c8f6" penwidth=2.5];
 
 details_default[
 shape="record"

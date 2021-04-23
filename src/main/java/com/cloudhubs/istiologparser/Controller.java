@@ -115,7 +115,7 @@ public class Controller {
 
     public Controller() throws IOException {
         // Parse multiple file to map
-        File dir = new File("sample-logs-1");
+        File dir = new File("tms-log");
         List<String> result = GetFiles(dir.listFiles());
         for (String filePath : result) {
             System.out.println(filePath);

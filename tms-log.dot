@@ -1,0 +1,40 @@
+digraph endpoints_istio {
+rankdir = LR;
+node [shape=record];
+keycloak_test:postgres_test:e  -> postgres_test:postgres_test [label = <<font color="#8c64c8">"2"</font>> arrowhead="empty" color="#8c64c8" penwidth=0.4166666666666667];
+
+keycloak_test[
+shape="record"
+label="<keycloak_test> keycloak.test"
+]
+cms_test:_qms_categoryinfo:e  -> qms_test:_qms_categoryinfo [label = <<font color="#26865d">"5"</font>> arrowhead="empty" color="#26865d" penwidth=0.8333333333333334];
+
+cms_test[
+shape="record"
+label="<cms_test> cms.test"
+]
+cms_test:_qms_configuration:e  -> qms_test:_qms_configuration [label = <<font color="#02a10d">"6"</font>> arrowhead="empty" color="#02a10d" penwidth=1.25];
+cms_test:postgres_test:e  -> postgres_test:postgres_test [label = <<font color="#c7b187">"15"</font>> arrowhead="empty" color="#c7b187" penwidth=1.6666666666666667];
+ems_test:postgres_test:e  -> postgres_test:postgres_test [label = <<font color="#a7ba15">"20"</font>> arrowhead="empty" color="#a7ba15" penwidth=2.0833333333333335];
+
+ems_test[
+shape="record"
+label="<ems_test> ems.test"
+]
+qms_test:postgres_test:e  -> postgres_test:postgres_test [label = <<font color="#a1d2eb">"40"</font>> arrowhead="empty" color="#a1d2eb" penwidth=2.5];
+
+qms_test[
+shape="record"
+label="<qms_test> qms.test"
+]
+
+postgres_test[
+shape="record"
+label="<postgres_test> postgres.test|<postgres_test> postgres.test"
+]
+
+qms_test[
+shape="record"
+label="<qms_test> qms.test|<_qms_categoryinfo> /qms/categoryinfo|<_qms_configuration> /qms/configuration"
+]
+}

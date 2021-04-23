@@ -2,11 +2,11 @@ digraph {
   rankdir="RL";
   node[ shape = record ];
 
-  Hero -> Character [ arrowhead="empty" ]
-  Villain -> Character [ arrowhead="empty" ]
-  Hero:a -> Hero:a [taillabel ="asdf" id=0];
-  Hero:b -> Hero:b [label ="asdf" id=1];
-  Hero:c -> Hero:c [label ="asdf" id=2];
+  Hero -> Character [ arrowhead="empty" penwidth=2.5 ]
+  Villain -> Character [ arrowhead="empty" penwidth=2.5 ]
+  Hero:a -> Hero:a [taillabel ="asdf" id=0 penwidth=2.0];
+  Hero:b -> Hero:b [label ="asdf" id=1 penwidth=1.5];
+  Hero:c -> Hero:c [label ="asdf" id=2 penwidth=1.0];
 
       // fields in the label are separated by a |
   // ending a line in \l left aligns it

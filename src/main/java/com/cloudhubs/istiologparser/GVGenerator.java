@@ -1,12 +1,12 @@
 package com.cloudhubs.istiologparser;
 
-import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
 public class GVGenerator {
+    static double val = 0.0;
     /*public static void generate(RadResponseContext radResponseContext) throws IOException {
         Graph g = graph("rad").directed();
         for (RestFlow restFlow : radResponseContext.getRestFlowContext().getRestFlows()) {
@@ -30,48 +30,106 @@ public class GVGenerator {
 
         int clusterIndex = 0;
 
-        FunctionsMap.forEach((nestedMap, value) -> {
-            nestedMap.forEach((fromSvc, secondNestedMap) -> {
-                secondNestedMap.forEach((toSvc, toEndPoint) -> {
+        int last = 0;
+        double diff = 2.5 / (double) FunctionsMap.size(); // penwidth diff
+        System.out.println(diff);
 
-                    String fromSvcID = formatNodeName(fromSvc);
-                    String toSvcID = formatNodeName(toSvc);
-                    String toEndPointID = formatNodeName(toEndPoint);
-                    String toSubEndPointID = toSvcID + ":" + toEndPoint;
+        FunctionsMap.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .forEach(x -> {
+                    System.out.println(x);
+                    Map<String, Map<String, String>> nestedMap = x.getKey();
+                    Integer value = x.getValue();
+                    nestedMap.forEach((fromSvc, secondNestedMap) -> {
+                        secondNestedMap.forEach((toSvc, toEndPoint) -> {
+                            if (toEndPoint==null)
+                                toEndPoint=toSvc;
+                            String fromSvcID = formatNodeName(fromSvc);
+                            String toSvcID = formatNodeName(toSvc);
+                            String toEndPointID = formatNodeName(toEndPoint);
+                            String toSubEndPointID = toSvcID + ":" + toEndPoint;
+                            if (value != last)
+                                val = val + diff;
 
-                    String format;
+                            String format;
 
-                    String hash = encodeColor();
+                            String hash = encodeColor();
 
-                    if (fromSvc.equals(toSvc)) {
-                        format = "%s:%s:e  -> %s:%s:e [taillabel = <<font color=\"%s\">%s</font>> arrowhead=\"empty\" color=\"%s\" ];";
-                    } else {
-                        format = "%s:%s:e  -> %s:%s [label = <<font color=\"%s\">%s</font>> arrowhead=\"empty\" color=\"%s\" ];";
-                    }
+                            if (fromSvc.equals(toSvc)) {
+                                format = "%s:%s:e  -> %s:%s:e [taillabel = <<font color=\"%s\">%s</font>> arrowhead=\"empty\" color=\"%s\" penwidth=%s ];";
+                            } else {
+                                format = "%s:%s:e  -> %s:%s [label = <<font color=\"%s\">%s</font>> arrowhead=\"empty\" color=\"%s\" penwidth=%s];";
+                            }
 
-                    String link = String.format(format,
-                            fromSvcID, toEndPointID, toSvcID, toEndPointID, hash, addDoubleQuotations(String.valueOf(value)), hash);
+                            String link = String.format(format,
+                                    fromSvcID, toEndPointID, toSvcID, toEndPointID, hash, addDoubleQuotations(String.valueOf(value)), hash, val);
 
-                    graph.append(link).append("\n");
+                            graph.append(link).append("\n");
 
-                    Set<String> set = svcGraphMap.get(toSvc);
-                    if (set == null) {
-                        set = new HashSet<String>();
-                    }
-                    set.add(toEndPoint);
-                    svcGraphMap.put(toSvc, set);
+                            Set<String> set = svcGraphMap.get(toSvc);
+                            if (set == null) {
+                                set = new HashSet<String>();
+                            }
+                            set.add(toEndPoint);
+                            svcGraphMap.put(toSvc, set);
 
-                    if(flag.get(fromSvcID)==null){
-                        graph.append("\n");
-                        graph.append(fromSvcID).append("[").append("\n");
-                        graph.append("shape=\"record\"").append("\n");
-                        graph.append("label=").append(addDoubleQuotations(String.format("<%s> %s", fromSvcID, fromSvc))).append("\n");
-                        graph.append("]").append("\n");
-                        flag.put(fromSvcID,true);
-                    }
+                            if (flag.get(fromSvcID) == null) {
+                                graph.append("\n");
+                                graph.append(fromSvcID).append("[").append("\n");
+                                graph.append("shape=\"record\"").append("\n");
+                                graph.append("label=").append(addDoubleQuotations(String.format("<%s> %s", fromSvcID, fromSvc))).append("\n");
+                                graph.append("]").append("\n");
+                                flag.put(fromSvcID, true);
+                            }
+                        });
+                    });
                 });
-            });
-        });
+
+//        System.out.println(FunctionsMap);
+
+//        FunctionsMap.forEach((nestedMap, value) -> {
+//            nestedMap.forEach((fromSvc, secondNestedMap) -> {
+//                secondNestedMap.forEach((toSvc, toEndPoint) -> {
+//
+//                    String fromSvcID = formatNodeName(fromSvc);
+//                    String toSvcID = formatNodeName(toSvc);
+//                    String toEndPointID = formatNodeName(toEndPoint);
+//                    String toSubEndPointID = toSvcID + ":" + toEndPoint;
+//
+//                    String format;
+//
+//                    String hash = encodeColor();
+//
+//                    if (fromSvc.equals(toSvc)) {
+//                        format = "%s:%s:e  -> %s:%s:e [taillabel = <<font color=\"%s\">%s</font>> arrowhead=\"empty\" color=\"%s\" ];";
+//                    } else {
+//                        format = "%s:%s:e  -> %s:%s [label = <<font color=\"%s\">%s</font>> arrowhead=\"empty\" color=\"%s\" ];";
+//                    }
+//
+//                    String link = String.format(format,
+//                            fromSvcID, toEndPointID, toSvcID, toEndPointID, hash, addDoubleQuotations(String.valueOf(value)), hash);
+//
+//                    graph.append(link).append("\n");
+//
+//                    Set<String> set = svcGraphMap.get(toSvc);
+//                    if (set == null) {
+//                        set = new HashSet<String>();
+//                    }
+//                    set.add(toEndPoint);
+//                    svcGraphMap.put(toSvc, set);
+//
+//                    if (flag.get(fromSvcID) == null) {
+//                        graph.append("\n");
+//                        graph.append(fromSvcID).append("[").append("\n");
+//                        graph.append("shape=\"record\"").append("\n");
+//                        graph.append("label=").append(addDoubleQuotations(String.format("<%s> %s", fromSvcID, fromSvc))).append("\n");
+//                        graph.append("]").append("\n");
+//                        flag.put(fromSvcID, true);
+//                    }
+//                });
+//            });
+//        });
 
         System.out.println(svcGraphMap);
 
@@ -98,7 +156,7 @@ public class GVGenerator {
         graph.append("}");
 
 
-        try (PrintWriter out = new PrintWriter("example/example.dot")) {
+        try (PrintWriter out = new PrintWriter("tms-log.dot")) {
             out.println(graph);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
