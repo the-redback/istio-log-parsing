@@ -1,0 +1,81 @@
+2021-04-23T22:28:03.952461Z	info	FLAG: --concurrency="2"
+2021-04-23T22:28:03.952524Z	info	FLAG: --domain="test.svc.cluster.local"
+2021-04-23T22:28:03.952558Z	info	FLAG: --help="false"
+2021-04-23T22:28:03.952576Z	info	FLAG: --log_as_json="false"
+2021-04-23T22:28:03.952592Z	info	FLAG: --log_caller=""
+2021-04-23T22:28:03.952616Z	info	FLAG: --log_output_level="default:info"
+2021-04-23T22:28:03.952638Z	info	FLAG: --log_rotate=""
+2021-04-23T22:28:03.952655Z	info	FLAG: --log_rotate_max_age="30"
+2021-04-23T22:28:03.952678Z	info	FLAG: --log_rotate_max_backups="1000"
+2021-04-23T22:28:03.952694Z	info	FLAG: --log_rotate_max_size="104857600"
+2021-04-23T22:28:03.952711Z	info	FLAG: --log_stacktrace_level="default:none"
+2021-04-23T22:28:03.952736Z	info	FLAG: --log_target="[stdout]"
+2021-04-23T22:28:03.952759Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2021-04-23T22:28:03.952775Z	info	FLAG: --outlierLogPath=""
+2021-04-23T22:28:03.952791Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2021-04-23T22:28:03.952807Z	info	FLAG: --proxyLogLevel="warning"
+2021-04-23T22:28:03.952831Z	info	FLAG: --serviceCluster="ums.test"
+2021-04-23T22:28:03.952847Z	info	FLAG: --stsPort="0"
+2021-04-23T22:28:03.952864Z	info	FLAG: --templateFile=""
+2021-04-23T22:28:03.952881Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2021-04-23T22:28:03.952906Z	info	Version 1.9.3-6e4665c22b35447ab2c4509b37b4009b319ba945-Clean
+2021-04-23T22:28:03.959253Z	info	Apply proxy config from env {}
+
+2021-04-23T22:28:03.966135Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: ums.test
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2021-04-23T22:28:03.966202Z	info	Proxy role	ips=[172.17.0.16] type=sidecar id=ums-695bf56d5b-xgkvh.test domain=test.svc.cluster.local
+2021-04-23T22:28:03.966228Z	info	JWT policy is third-party-jwt
+2021-04-23T22:28:03.966252Z	info	Pilot SAN: [istiod.istio-system.svc]
+2021-04-23T22:28:03.966270Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2021-04-23T22:28:03.966342Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2021-04-23T22:28:03.966434Z	info	citadelclient	Citadel client using custom root cert: istiod.istio-system.svc:15012
+2021-04-23T22:28:04.110534Z	info	ads	All caches have been synced up in 166.28035ms, marking server ready
+2021-04-23T22:28:04.112591Z	info	sds	SDS server for workload certificates started, listening on "./etc/istio/proxy/SDS"
+2021-04-23T22:28:04.112698Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2021-04-23T22:28:04.113219Z	info	sds	Start SDS grpc server
+2021-04-23T22:28:04.113303Z	info	Starting proxy agent
+2021-04-23T22:28:04.116516Z	info	Received new config, creating new Envoy epoch 0
+2021-04-23T22:28:04.113464Z	info	Opening status port 15020
+2021-04-23T22:28:04.134298Z	info	Epoch 0 starting
+2021-04-23T22:28:04.197620Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --parent-shutdown-time-s 60 --service-cluster ums.test --service-node sidecar~172.17.0.16~ums-695bf56d5b-xgkvh.test~test.svc.cluster.local --local-address-ip-version v4 --bootstrap-version 3 --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2021-04-23T22:28:04.497487Z	warning	envoy runtime	Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+2021-04-23T22:28:04.497571Z	warning	envoy runtime	Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+2021-04-23T22:28:04.498258Z	warning	envoy runtime	Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+2021-04-23T22:28:04.498331Z	warning	envoy runtime	Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+2021-04-23T22:28:04.630256Z	info	cache	Root cert has changed, start rotating root cert
+2021-04-23T22:28:04.630326Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:0 Version:
+2021-04-23T22:28:04.630415Z	info	cache	generated new workload certificate	latency=517.916787ms ttl=23h59m59.369608736s
+2021-04-23T22:28:04.717849Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2021-04-23T22:28:04.894847Z	info	ads	ADS: new connection for node:sidecar~172.17.0.16~ums-695bf56d5b-xgkvh.test~test.svc.cluster.local-1
+2021-04-23T22:28:04.906714Z	info	sds	SDS: PUSH	resource=ROOTCA
+2021-04-23T22:28:04.896545Z	info	ads	ADS: new connection for node:sidecar~172.17.0.16~ums-695bf56d5b-xgkvh.test~test.svc.cluster.local-2
+2021-04-23T22:28:04.906948Z	info	cache	returned workload certificate from cache	ttl=23h59m59.093068078s
+2021-04-23T22:28:04.916035Z	info	sds	SDS: PUSH	resource=default
+2021-04-23T22:28:05.468592Z	warning	envoy filter	mTLS PERMISSIVE mode is used, connection can be either plaintext or TLS, and client cert can be omitted. Please consider to upgrade to mTLS STRICT mode for more secure configuration that only allows TLS connection with client cert. See https://istio.io/docs/tasks/security/mtls-migration/
+2021-04-23T22:28:05.473493Z	warning	envoy filter	mTLS PERMISSIVE mode is used, connection can be either plaintext or TLS, and client cert can be omitted. Please consider to upgrade to mTLS STRICT mode for more secure configuration that only allows TLS connection with client cert. See https://istio.io/docs/tasks/security/mtls-migration/
+2021-04-23T22:28:05.476699Z	warning	envoy filter	mTLS PERMISSIVE mode is used, connection can be either plaintext or TLS, and client cert can be omitted. Please consider to upgrade to mTLS STRICT mode for more secure configuration that only allows TLS connection with client cert. See https://istio.io/docs/tasks/security/mtls-migration/
+2021-04-23T22:28:05.478320Z	warning	envoy filter	mTLS PERMISSIVE mode is used, connection can be either plaintext or TLS, and client cert can be omitted. Please consider to upgrade to mTLS STRICT mode for more secure configuration that only allows TLS connection with client cert. See https://istio.io/docs/tasks/security/mtls-migration/
+2021-04-23T22:28:06.045554Z	info	Initialization took 2.208434119s
+2021-04-23T22:28:06.045614Z	info	Envoy proxy is ready
+{"response_flags":"-","route_name":null,"protocol":null,"upstream_local_address":"172.17.0.16:55482","requested_server_name":null,"authority":null,"path":null,"response_code":0,"bytes_received":978,"upstream_cluster":"PassthroughCluster","request_id":null,"start_time":"2021-04-23T22:28:26.689Z","upstream_service_time":null,"method":null,"downstream_remote_address":"172.17.0.16:55480","response_code_details":null,"downstream_local_address":"192.168.64.7:443","upstream_host":"192.168.64.7:443","connection_termination_details":null,"user_agent":null,"x_forwarded_for":null,"upstream_transport_failure_reason":null,"duration":11945,"bytes_sent":10431}
+{"route_name":"default","path":"/ums/userinfo/users","response_flags":"-","upstream_local_address":"127.0.0.1:46252","duration":1766,"upstream_cluster":"inbound|10001||","requested_server_name":"outbound_.80_._.ums.test.svc.cluster.local","upstream_service_time":"1754","authority":"tcs.ecs.baylor.edu","x_forwarded_for":"192.168.64.1","method":"GET","downstream_local_address":"172.17.0.16:10001","protocol":"HTTP/1.1","response_code_details":"via_upstream","upstream_transport_failure_reason":null,"downstream_remote_address":"192.168.64.1:0","request_id":"a695328d-3d3c-9efc-a35b-29fc1f5f3c4a","upstream_host":"127.0.0.1:10001","bytes_sent":182,"bytes_received":0,"response_code":200,"connection_termination_details":null,"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36","start_time":"2021-04-23T22:36:07.031Z"}
+{"upstream_transport_failure_reason":null,"bytes_received":2865,"requested_server_name":null,"upstream_host":"192.168.64.7:443","request_id":null,"connection_termination_details":null,"upstream_service_time":null,"response_code_details":null,"method":null,"user_agent":null,"downstream_remote_address":"172.17.0.16:35980","duration":10109,"protocol":null,"authority":null,"bytes_sent":4860,"path":null,"response_flags":"-","upstream_local_address":"172.17.0.16:35982","downstream_local_address":"192.168.64.7:443","route_name":null,"x_forwarded_for":null,"upstream_cluster":"PassthroughCluster","response_code":0,"start_time":"2021-04-23T22:36:08.529Z"}
+{"response_code":200,"upstream_service_time":"89","duration":91,"protocol":"HTTP/1.1","connection_termination_details":null,"bytes_sent":182,"response_flags":"-","upstream_cluster":"inbound|10001||","upstream_host":"127.0.0.1:10001","upstream_local_address":"127.0.0.1:46252","upstream_transport_failure_reason":null,"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36","route_name":"default","bytes_received":0,"x_forwarded_for":"192.168.64.1","response_code_details":"via_upstream","downstream_remote_address":"192.168.64.1:0","downstream_local_address":"172.17.0.16:10001","authority":"tcs.ecs.baylor.edu","start_time":"2021-04-23T22:36:58.007Z","method":"GET","path":"/ums/userinfo/users","requested_server_name":"outbound_.80_._.ums.test.svc.cluster.local","request_id":"226b82c7-78e8-93da-a6fa-3235c8cfaa9a"}
+{"upstream_host":"127.0.0.1:10001","duration":82,"bytes_sent":182,"upstream_service_time":"80","path":"/ums/userinfo/users","downstream_remote_address":"192.168.64.1:0","downstream_local_address":"172.17.0.16:10001","response_code_details":"via_upstream","response_code":200,"start_time":"2021-04-23T22:36:58.359Z","upstream_transport_failure_reason":null,"upstream_local_address":"127.0.0.1:46252","response_flags":"-","connection_termination_details":null,"requested_server_name":"outbound_.80_._.ums.test.svc.cluster.local","x_forwarded_for":"192.168.64.1","method":"GET","bytes_received":0,"route_name":"default","upstream_cluster":"inbound|10001||","request_id":"21d79ae3-e8c5-9b4c-a397-415519bd7b7e","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36","protocol":"HTTP/1.1","authority":"tcs.ecs.baylor.edu"}
+{"downstream_remote_address":"172.17.0.16:36924","response_code_details":null,"route_name":null,"start_time":"2021-04-23T22:36:58.059Z","request_id":null,"user_agent":null,"upstream_cluster":"PassthroughCluster","authority":null,"downstream_local_address":"192.168.64.7:443","bytes_received":4268,"x_forwarded_for":null,"bytes_sent":1380,"upstream_transport_failure_reason":null,"connection_termination_details":null,"upstream_service_time":null,"duration":10035,"method":null,"upstream_host":"192.168.64.7:443","requested_server_name":null,"protocol":null,"upstream_local_address":"172.17.0.16:36926","response_flags":"-","response_code":0,"path":null}
+{"bytes_received":299,"upstream_cluster":"inbound|10001||","upstream_local_address":"127.0.0.1:46252","response_code_details":"via_upstream","connection_termination_details":null,"downstream_local_address":"172.17.0.16:10001","request_id":"75465111-1c06-9ca0-88ac-16427b482816","route_name":"default","upstream_transport_failure_reason":null,"duration":145,"method":"PUT","bytes_sent":0,"upstream_host":"127.0.0.1:10001","protocol":"HTTP/1.1","x_forwarded_for":"192.168.64.1","downstream_remote_address":"192.168.64.1:0","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36","start_time":"2021-04-23T22:37:11.711Z","requested_server_name":"outbound_.80_._.ums.test.svc.cluster.local","response_code":204,"response_flags":"-","upstream_service_time":"144","path":"/ums/userinfo/updateUser","authority":"tcs.ecs.baylor.edu"}
+{"authority":null,"connection_termination_details":null,"upstream_transport_failure_reason":null,"user_agent":null,"upstream_service_time":null,"request_id":null,"x_forwarded_for":null,"response_code_details":null,"bytes_sent":327,"upstream_cluster":"PassthroughCluster","path":null,"downstream_local_address":"192.168.64.7:443","response_code":0,"route_name":null,"bytes_received":2821,"requested_server_name":null,"protocol":null,"duration":10072,"upstream_local_address":"172.17.0.16:37198","upstream_host":"192.168.64.7:443","downstream_remote_address":"172.17.0.16:37196","start_time":"2021-04-23T22:37:11.782Z","method":null,"response_flags":"-"}

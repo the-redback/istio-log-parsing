@@ -7,6 +7,7 @@ import java.util.*;
 
 public class GVGenerator {
     static double val = 0.0;
+
     /*public static void generate(RadResponseContext radResponseContext) throws IOException {
         Graph g = graph("rad").directed();
         for (RestFlow restFlow : radResponseContext.getRestFlowContext().getRestFlows()) {
@@ -87,7 +88,6 @@ public class GVGenerator {
                 });
 
 //        System.out.println(FunctionsMap);
-
 //        FunctionsMap.forEach((nestedMap, value) -> {
 //            nestedMap.forEach((fromSvc, secondNestedMap) -> {
 //                secondNestedMap.forEach((toSvc, toEndPoint) -> {
