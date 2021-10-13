@@ -1,0 +1,76 @@
+2021-04-26T09:00:37.050762Z	info	FLAG: --concurrency="2"
+2021-04-26T09:00:37.054886Z	info	FLAG: --domain="test.svc.cluster.local"
+2021-04-26T09:00:37.055010Z	info	FLAG: --help="false"
+2021-04-26T09:00:37.055184Z	info	FLAG: --log_as_json="false"
+2021-04-26T09:00:37.055340Z	info	FLAG: --log_caller=""
+2021-04-26T09:00:37.055542Z	info	FLAG: --log_output_level="default:info"
+2021-04-26T09:00:37.055688Z	info	FLAG: --log_rotate=""
+2021-04-26T09:00:37.055827Z	info	FLAG: --log_rotate_max_age="30"
+2021-04-26T09:00:37.056176Z	info	FLAG: --log_rotate_max_backups="1000"
+2021-04-26T09:00:37.056306Z	info	FLAG: --log_rotate_max_size="104857600"
+2021-04-26T09:00:37.056548Z	info	FLAG: --log_stacktrace_level="default:none"
+2021-04-26T09:00:37.056702Z	info	FLAG: --log_target="[stdout]"
+2021-04-26T09:00:37.056905Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2021-04-26T09:00:37.057068Z	info	FLAG: --outlierLogPath=""
+2021-04-26T09:00:37.057300Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2021-04-26T09:00:37.057623Z	info	FLAG: --proxyLogLevel="warning"
+2021-04-26T09:00:37.057738Z	info	FLAG: --serviceCluster="ums-client.test"
+2021-04-26T09:00:37.057902Z	info	FLAG: --stsPort="0"
+2021-04-26T09:00:37.058114Z	info	FLAG: --templateFile=""
+2021-04-26T09:00:37.058317Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2021-04-26T09:00:37.058833Z	info	Version 1.9.3-6e4665c22b35447ab2c4509b37b4009b319ba945-Clean
+2021-04-26T09:00:37.062646Z	info	Apply proxy config from env {}
+
+2021-04-26T09:00:37.065238Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: ums-client.test
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2021-04-26T09:00:37.068667Z	info	Proxy role	ips=[172.17.0.16] type=sidecar id=ums-client-777bc989b4-jzc69.test domain=test.svc.cluster.local
+2021-04-26T09:00:37.068798Z	info	JWT policy is third-party-jwt
+2021-04-26T09:00:37.068979Z	info	Pilot SAN: [istiod.istio-system.svc]
+2021-04-26T09:00:37.069126Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2021-04-26T09:00:37.069361Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2021-04-26T09:00:37.069675Z	info	citadelclient	Citadel client using custom root cert: istiod.istio-system.svc:15012
+2021-04-26T09:00:37.323825Z	info	ads	All caches have been synced up in 277.784588ms, marking server ready
+2021-04-26T09:00:37.357098Z	info	sds	Start SDS grpc server
+2021-04-26T09:00:37.357169Z	info	sds	SDS server for workload certificates started, listening on "./etc/istio/proxy/SDS"
+2021-04-26T09:00:37.357375Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2021-04-26T09:00:37.369923Z	info	Opening status port 15020
+2021-04-26T09:00:37.370725Z	info	Received new config, creating new Envoy epoch 0
+2021-04-26T09:00:37.370779Z	info	Epoch 0 starting
+2021-04-26T09:00:37.369845Z	info	Starting proxy agent
+2021-04-26T09:00:37.454370Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --parent-shutdown-time-s 60 --service-cluster ums-client.test --service-node sidecar~172.17.0.16~ums-client-777bc989b4-jzc69.test~test.svc.cluster.local --local-address-ip-version v4 --bootstrap-version 3 --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2021-04-26T09:00:37.777409Z	warning	envoy runtime	Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+2021-04-26T09:00:37.777567Z	warning	envoy runtime	Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+2021-04-26T09:00:37.780007Z	warning	envoy runtime	Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+2021-04-26T09:00:37.780926Z	warning	envoy runtime	Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+2021-04-26T09:00:38.007321Z	info	cache	Root cert has changed, start rotating root cert
+2021-04-26T09:00:38.007396Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:0 Version:
+2021-04-26T09:00:38.022327Z	info	cache	generated new workload certificate	latency=683.046208ms ttl=23h59m59.992534858s
+2021-04-26T09:00:38.216456Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2021-04-26T09:00:38.386689Z	info	ads	ADS: new connection for node:sidecar~172.17.0.16~ums-client-777bc989b4-jzc69.test~test.svc.cluster.local-2
+2021-04-26T09:00:38.392636Z	info	sds	SDS: PUSH	resource=ROOTCA
+2021-04-26T09:00:38.401018Z	info	ads	ADS: new connection for node:sidecar~172.17.0.16~ums-client-777bc989b4-jzc69.test~test.svc.cluster.local-1
+2021-04-26T09:00:38.408075Z	info	cache	returned workload certificate from cache	ttl=23h59m59.591954614s
+2021-04-26T09:00:38.408220Z	info	sds	SDS: PUSH	resource=default
+2021-04-26T09:00:38.753213Z	warning	envoy filter	mTLS PERMISSIVE mode is used, connection can be either plaintext or TLS, and client cert can be omitted. Please consider to upgrade to mTLS STRICT mode for more secure configuration that only allows TLS connection with client cert. See https://istio.io/docs/tasks/security/mtls-migration/
+2021-04-26T09:00:38.757738Z	warning	envoy filter	mTLS PERMISSIVE mode is used, connection can be either plaintext or TLS, and client cert can be omitted. Please consider to upgrade to mTLS STRICT mode for more secure configuration that only allows TLS connection with client cert. See https://istio.io/docs/tasks/security/mtls-migration/
+2021-04-26T09:00:38.760979Z	warning	envoy filter	mTLS PERMISSIVE mode is used, connection can be either plaintext or TLS, and client cert can be omitted. Please consider to upgrade to mTLS STRICT mode for more secure configuration that only allows TLS connection with client cert. See https://istio.io/docs/tasks/security/mtls-migration/
+2021-04-26T09:00:38.763388Z	warning	envoy filter	mTLS PERMISSIVE mode is used, connection can be either plaintext or TLS, and client cert can be omitted. Please consider to upgrade to mTLS STRICT mode for more secure configuration that only allows TLS connection with client cert. See https://istio.io/docs/tasks/security/mtls-migration/
+2021-04-26T09:00:40.609823Z	info	Initialization took 3.633762797s
+2021-04-26T09:00:40.615285Z	info	Envoy proxy is ready
+2021-04-26T09:32:55.469662Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed: 0, 
+2021-04-26T09:32:55.570454Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+{"downstream_remote_address":"192.168.64.1:0","response_flags":"-","x_forwarded_for":"192.168.64.1","authority":"tcs.ecs.baylor.edu","response_code_details":"via_upstream","method":"GET","connection_termination_details":null,"response_code":304,"downstream_local_address":"172.17.0.16:80","upstream_cluster":"inbound|80||","bytes_sent":0,"upstream_transport_failure_reason":null,"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36","duration":1,"upstream_local_address":"127.0.0.1:44612","upstream_host":"127.0.0.1:80","bytes_received":0,"path":"/","start_time":"2021-04-26T09:40:53.576Z","request_id":"8ece97f6-de60-9251-ab35-9cfb9c0ffd7e","protocol":"HTTP/1.1","requested_server_name":"outbound_.80_._.ums-client.test.svc.cluster.local","route_name":"default","upstream_service_time":"0"}

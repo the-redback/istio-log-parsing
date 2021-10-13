@@ -1,0 +1,78 @@
+2021-04-26T09:00:35.423409Z	info	FLAG: --concurrency="2"
+2021-04-26T09:00:35.423473Z	info	FLAG: --domain="test.svc.cluster.local"
+2021-04-26T09:00:35.423499Z	info	FLAG: --help="false"
+2021-04-26T09:00:35.423514Z	info	FLAG: --log_as_json="false"
+2021-04-26T09:00:35.423792Z	info	FLAG: --log_caller=""
+2021-04-26T09:00:35.423820Z	info	FLAG: --log_output_level="default:info"
+2021-04-26T09:00:35.423836Z	info	FLAG: --log_rotate=""
+2021-04-26T09:00:35.423892Z	info	FLAG: --log_rotate_max_age="30"
+2021-04-26T09:00:35.423915Z	info	FLAG: --log_rotate_max_backups="1000"
+2021-04-26T09:00:35.423939Z	info	FLAG: --log_rotate_max_size="104857600"
+2021-04-26T09:00:35.423955Z	info	FLAG: --log_stacktrace_level="default:none"
+2021-04-26T09:00:35.423988Z	info	FLAG: --log_target="[stdout]"
+2021-04-26T09:00:35.424012Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2021-04-26T09:00:35.424028Z	info	FLAG: --outlierLogPath=""
+2021-04-26T09:00:35.424053Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2021-04-26T09:00:35.424076Z	info	FLAG: --proxyLogLevel="warning"
+2021-04-26T09:00:35.424098Z	info	FLAG: --serviceCluster="qms-client.test"
+2021-04-26T09:00:35.424115Z	info	FLAG: --stsPort="0"
+2021-04-26T09:00:35.424300Z	info	FLAG: --templateFile=""
+2021-04-26T09:00:35.424351Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2021-04-26T09:00:35.424388Z	info	Version 1.9.3-6e4665c22b35447ab2c4509b37b4009b319ba945-Clean
+2021-04-26T09:00:35.425709Z	info	Apply proxy config from env {}
+
+2021-04-26T09:00:35.426623Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: qms-client.test
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2021-04-26T09:00:35.426667Z	info	Proxy role	ips=[172.17.0.13] type=sidecar id=qms-client-7c78c5cf88-k9h4w.test domain=test.svc.cluster.local
+2021-04-26T09:00:35.426695Z	info	JWT policy is third-party-jwt
+2021-04-26T09:00:35.426724Z	info	Pilot SAN: [istiod.istio-system.svc]
+2021-04-26T09:00:35.426745Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2021-04-26T09:00:35.426808Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2021-04-26T09:00:35.426889Z	info	citadelclient	Citadel client using custom root cert: istiod.istio-system.svc:15012
+2021-04-26T09:00:35.655467Z	info	ads	All caches have been synced up in 308.616213ms, marking server ready
+2021-04-26T09:00:35.655896Z	info	sds	SDS server for workload certificates started, listening on "./etc/istio/proxy/SDS"
+2021-04-26T09:00:35.655934Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2021-04-26T09:00:35.656128Z	info	Starting proxy agent
+2021-04-26T09:00:35.658049Z	info	sds	Start SDS grpc server
+2021-04-26T09:00:35.658177Z	info	Opening status port 15020
+2021-04-26T09:00:35.658458Z	info	Received new config, creating new Envoy epoch 0
+2021-04-26T09:00:35.658582Z	info	Epoch 0 starting
+2021-04-26T09:00:35.751635Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --parent-shutdown-time-s 60 --service-cluster qms-client.test --service-node sidecar~172.17.0.13~qms-client-7c78c5cf88-k9h4w.test~test.svc.cluster.local --local-address-ip-version v4 --bootstrap-version 3 --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2021-04-26T09:00:35.855939Z	warning	envoy runtime	Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+2021-04-26T09:00:35.856008Z	warning	envoy runtime	Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+2021-04-26T09:00:35.856367Z	warning	envoy runtime	Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+2021-04-26T09:00:35.856408Z	warning	envoy runtime	Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+2021-04-26T09:00:36.157775Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2021-04-26T09:00:36.383870Z	info	ads	ADS: new connection for node:sidecar~172.17.0.13~qms-client-7c78c5cf88-k9h4w.test~test.svc.cluster.local-1
+2021-04-26T09:00:36.386006Z	info	ads	ADS: new connection for node:sidecar~172.17.0.13~qms-client-7c78c5cf88-k9h4w.test~test.svc.cluster.local-2
+2021-04-26T09:00:37.134056Z	info	cache	Root cert has changed, start rotating root cert
+2021-04-26T09:00:37.134130Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:
+2021-04-26T09:00:37.134213Z	info	cache	generated new workload certificate	latency=1.477798574s ttl=23h59m59.865812321s
+2021-04-26T09:00:37.134340Z	info	cache	returned delayed workload certificate from cache	ttl=23h59m59.865674858s
+2021-04-26T09:00:37.140100Z	info	sds	SDS: PUSH	resource=default
+2021-04-26T09:00:37.789729Z	info	sds	SDS: PUSH	resource=ROOTCA
+2021-04-26T09:00:37.792251Z	info	sds	SDS: PUSH	resource=ROOTCA
+2021-04-26T09:00:38.107439Z	warning	envoy filter	mTLS PERMISSIVE mode is used, connection can be either plaintext or TLS, and client cert can be omitted. Please consider to upgrade to mTLS STRICT mode for more secure configuration that only allows TLS connection with client cert. See https://istio.io/docs/tasks/security/mtls-migration/
+2021-04-26T09:00:38.126056Z	warning	envoy filter	mTLS PERMISSIVE mode is used, connection can be either plaintext or TLS, and client cert can be omitted. Please consider to upgrade to mTLS STRICT mode for more secure configuration that only allows TLS connection with client cert. See https://istio.io/docs/tasks/security/mtls-migration/
+2021-04-26T09:00:38.135459Z	warning	envoy filter	mTLS PERMISSIVE mode is used, connection can be either plaintext or TLS, and client cert can be omitted. Please consider to upgrade to mTLS STRICT mode for more secure configuration that only allows TLS connection with client cert. See https://istio.io/docs/tasks/security/mtls-migration/
+2021-04-26T09:00:38.138954Z	warning	envoy filter	mTLS PERMISSIVE mode is used, connection can be either plaintext or TLS, and client cert can be omitted. Please consider to upgrade to mTLS STRICT mode for more secure configuration that only allows TLS connection with client cert. See https://istio.io/docs/tasks/security/mtls-migration/
+2021-04-26T09:00:38.766014Z	info	Initialization took 3.544681485s
+2021-04-26T09:00:38.766074Z	info	Envoy proxy is ready
+2021-04-26T09:31:30.727850Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed: 0, 
+2021-04-26T09:31:31.152900Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+{"response_code":200,"upstream_local_address":"127.0.0.1:44670","response_code_details":"via_upstream","upstream_cluster":"inbound|80||","x_forwarded_for":"192.168.64.1","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36","authority":"tcs.ecs.baylor.edu","route_name":"default","bytes_received":0,"bytes_sent":3870,"downstream_remote_address":"192.168.64.1:0","upstream_service_time":"0","upstream_host":"127.0.0.1:80","path":"/questions/favicon.ico","upstream_transport_failure_reason":null,"request_id":"c22ce70b-4337-9f21-8617-3ded561f5b5b","method":"GET","response_flags":"-","connection_termination_details":null,"protocol":"HTTP/1.1","start_time":"2021-04-26T09:40:56.462Z","duration":2,"requested_server_name":"outbound_.80_._.qms-client.test.svc.cluster.local","downstream_local_address":"172.17.0.13:80"}
+{"downstream_remote_address":"192.168.64.1:0","method":"GET","upstream_transport_failure_reason":null,"bytes_received":0,"bytes_sent":1128,"protocol":"HTTP/1.1","requested_server_name":"outbound_.80_._.qms-client.test.svc.cluster.local","connection_termination_details":null,"route_name":"default","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36","downstream_local_address":"172.17.0.13:80","path":"/questions/question/?catId=-1&text=","duration":3,"upstream_local_address":"127.0.0.1:44670","response_code_details":"via_upstream","upstream_cluster":"inbound|80||","upstream_host":"127.0.0.1:80","response_code":200,"response_flags":"-","upstream_service_time":"2","authority":"tcs.ecs.baylor.edu","start_time":"2021-04-26T09:41:41.294Z","request_id":"b5d7fb07-b5cf-9080-901f-b9683e8c9532","x_forwarded_for":"192.168.64.1"}
