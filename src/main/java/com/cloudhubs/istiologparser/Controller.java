@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Controller {
-    String filterNamespace = "test"; //keep it blank if requires
+    String filterNamespace = "default"; //keep it blank if requires
     String wildcardDns = "tcs.ecs.baylor.edu"; //keep it blank if requires
     String wildcardProxy = "istio-ingressgateway.istio-system"; //keep it blank if requires
     private Map<Map<String, Map<String, String>>, Integer> FunctionsMap = new HashMap<>();
@@ -101,6 +101,7 @@ public class Controller {
 
                     String DestSvc = GetDestinationService(value);
                     String path = (String) map.get("path");
+                    System.out.println(">>1<< "+ DestSvc + " " +path);
                     if (DestSvc.equals("")) continue;
                     if (path == null) {
                         System.out.println(DestSvc+"---------"+path);
@@ -134,6 +135,7 @@ public class Controller {
 
     public List<String> GetFiles(File[] files) {
         List<String> result = new ArrayList<>();
+        System.out.println(">>>>>>>>> " + files);
         for (File file : files) {
             if (file.isDirectory()) {
                 GetFiles(file.listFiles()); // Calls same method again.
@@ -147,7 +149,7 @@ public class Controller {
 
     public Controller() throws IOException {
         // Parse multiple file to map
-        File dir = new File("tms-log");
+        File dir = new File("train-ticket-log");
         List<String> result = GetFiles(dir.listFiles());
         for (String filePath : result) {
             System.out.println(filePath);

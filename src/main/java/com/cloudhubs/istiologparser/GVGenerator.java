@@ -156,7 +156,7 @@ public class GVGenerator {
         graph.append("}");
 
 
-        try (PrintWriter out = new PrintWriter("tms-log.dot")) {
+        try (PrintWriter out = new PrintWriter("train-ticket-log.dot")) {
             out.println(graph);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

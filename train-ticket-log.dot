@@ -1,0 +1,307 @@
+digraph endpoints_istio {
+rankdir = LR;
+node [shape=record];
+ts_consign_price_service_default:_:e  -> ts_consign_price_mongo_default:_ [label = <<font color="#27dea5">"1"</font>> arrowhead="empty" color="#27dea5" penwidth=0.052083333333333336];
+
+ts_consign_price_service_default[
+shape="record"
+label="<ts_consign_price_service_default> ts-consign-price-service.default"
+]
+ts_voucher_service_default:_:e  -> ts_voucher_mysql_default:_ [label = <<font color="#4dd45b">"1"</font>> arrowhead="empty" color="#4dd45b" penwidth=0.10416666666666667];
+
+ts_voucher_service_default[
+shape="record"
+label="<ts_voucher_service_default> ts-voucher-service.default"
+]
+ts_ui_dashboard_default:_api_v1_travel2service_tr_:e  -> ts_travel2_service_default:_api_v1_travel2service_tr_ [label = <<font color="#84467f">"1"</font>> arrowhead="empty" color="#84467f" penwidth=0.15625];
+
+ts_ui_dashboard_default[
+shape="record"
+label="<ts_ui_dashboard_default> ts-ui-dashboard.default"
+]
+ts_auth_service_default:_api_v1_verifycode_verify_:e  -> ts_verification_code_service_default:_api_v1_verifycode_verify_ [label = <<font color="#87b57d">"1"</font>> arrowhead="empty" color="#87b57d" penwidth=0.20833333333333334];
+
+ts_auth_service_default[
+shape="record"
+label="<ts_auth_service_default> ts-auth-service.default"
+]
+ts_ticket_office_service_default:_:e  -> ts_ticket_office_mongo_default:_ [label = <<font color="#9f84f2">"1"</font>> arrowhead="empty" color="#9f84f2" penwidth=0.2604166666666667];
+
+ts_ticket_office_service_default[
+shape="record"
+label="<ts_ticket_office_service_default> ts-ticket-office-service.default"
+]
+ts_assurance_service_default:_:e  -> ts_assurance_mongo_default:_ [label = <<font color="#8f0cb7">"1"</font>> arrowhead="empty" color="#8f0cb7" penwidth=0.3125];
+
+ts_assurance_service_default[
+shape="record"
+label="<ts_assurance_service_default> ts-assurance-service.default"
+]
+ts_travel2_service_default:_api_v1_ticketinfoservice_:e  -> ts_ticketinfo_service_default:_api_v1_ticketinfoservice_ [label = <<font color="#fd206d">"2"</font>> arrowhead="empty" color="#fd206d" penwidth=0.3645833333333333];
+
+ts_travel2_service_default[
+shape="record"
+label="<ts_travel2_service_default> ts-travel2-service.default"
+]
+ts_travel2_service_default:_:e  -> ts_travel2_mongo_default:_ [label = <<font color="#7e7845">"2"</font>> arrowhead="empty" color="#7e7845" penwidth=0.41666666666666663];
+ts_ui_dashboard_default:_api_v1_consignservice_co_:e  -> ts_consign_service_default:_api_v1_consignservice_co_ [label = <<font color="#be3d0b">"2"</font>> arrowhead="empty" color="#be3d0b" penwidth=0.46874999999999994];
+ts_consign_service_default:_:e  -> ts_consign_mongo_default:_ [label = <<font color="#7fafed">"2"</font>> arrowhead="empty" color="#7fafed" penwidth=0.5208333333333333];
+
+ts_consign_service_default[
+shape="record"
+label="<ts_consign_service_default> ts-consign-service.default"
+]
+ts_payment_service_default:_:e  -> ts_payment_mongo_default:_ [label = <<font color="#d2cc79">"2"</font>> arrowhead="empty" color="#d2cc79" penwidth=0.5729166666666666];
+
+ts_payment_service_default[
+shape="record"
+label="<ts_payment_service_default> ts-payment-service.default"
+]
+ts_user_service_default:_:e  -> ts_user_mongo_default:_ [label = <<font color="#e528b6">"3"</font>> arrowhead="empty" color="#e528b6" penwidth=0.625];
+
+ts_user_service_default[
+shape="record"
+label="<ts_user_service_default> ts-user-service.default"
+]
+ts_config_service_default:_:e  -> ts_config_mongo_default:_ [label = <<font color="#0eee31">"4"</font>> arrowhead="empty" color="#0eee31" penwidth=0.6770833333333334];
+
+ts_config_service_default[
+shape="record"
+label="<ts_config_service_default> ts-config-service.default"
+]
+ts_travel2_service_default:_api_v1_routeservice_rout_:e  -> ts_route_service_default:_api_v1_routeservice_rout_ [label = <<font color="#1367ab">"5"</font>> arrowhead="empty" color="#1367ab" penwidth=0.7291666666666667];
+ts_ui_dashboard_default:_api_v1_orderOtherService_:e  -> ts_order_other_service_default:_api_v1_orderOtherService_ [label = <<font color="#b208b4">"5"</font>> arrowhead="empty" color="#b208b4" penwidth=0.7812500000000001];
+ts_order_other_service_default:_api_v1_stationservice_st_:e  -> ts_station_service_default:_api_v1_stationservice_st_ [label = <<font color="#83d921">"5"</font>> arrowhead="empty" color="#83d921" penwidth=0.8333333333333335];
+
+ts_order_other_service_default[
+shape="record"
+label="<ts_order_other_service_default> ts-order-other-service.default"
+]
+ts_ui_dashboard_default:_api_v1_verifycode_genera_:e  -> ts_verification_code_service_default:_api_v1_verifycode_genera_ [label = <<font color="#a6c669">"6"</font>> arrowhead="empty" color="#a6c669" penwidth=0.8854166666666669];
+ts_basic_service_default:_api_v1_priceservice_pric_:e  -> ts_price_service_default:_api_v1_priceservice_pric_ [label = <<font color="#2db80a">"175"</font>> arrowhead="empty" color="#2db80a" penwidth=0.9375000000000002];
+
+ts_basic_service_default[
+shape="record"
+label="<ts_basic_service_default> ts-basic-service.default"
+]
+ts_basic_service_default:_api_v1_trainservice_trai_:e  -> ts_train_service_default:_api_v1_trainservice_trai_ [label = <<font color="#d3c27d">"175"</font>> arrowhead="empty" color="#d3c27d" penwidth=0.9895833333333336];
+ts_basic_service_default:_api_v1_routeservice_rout_:e  -> ts_route_service_default:_api_v1_routeservice_rout_ [label = <<font color="#11e370">"175"</font>> arrowhead="empty" color="#11e370" penwidth=1.041666666666667];
+ts_travel_service_default:_api_v1_orderservice_orde_:e  -> ts_order_service_default:_api_v1_orderservice_orde_ [label = <<font color="#a8d5f4">"175"</font>> arrowhead="empty" color="#a8d5f4" penwidth=1.0937500000000002];
+
+ts_travel_service_default[
+shape="record"
+label="<ts_travel_service_default> ts-travel-service.default"
+]
+ts_security_service_default:_api_v1_orderservice_orde_:e  -> ts_order_service_default:_api_v1_orderservice_orde_ [label = <<font color="#230a5a">"323"</font>> arrowhead="empty" color="#230a5a" penwidth=1.1458333333333335];
+
+ts_security_service_default[
+shape="record"
+label="<ts_security_service_default> ts-security-service.default"
+]
+ts_food_service_default:_api_v1_foodmapservice_tr_:e  -> ts_food_map_service_default:_api_v1_foodmapservice_tr_ [label = <<font color="#edaeaf">"323"</font>> arrowhead="empty" color="#edaeaf" penwidth=1.1979166666666667];
+
+ts_food_service_default[
+shape="record"
+label="<ts_food_service_default> ts-food-service.default"
+]
+ts_food_service_default:_api_v1_foodmapservice_fo_:e  -> ts_food_map_service_default:_api_v1_foodmapservice_fo_ [label = <<font color="#8a5536">"323"</font>> arrowhead="empty" color="#8a5536" penwidth=1.25];
+ts_ui_dashboard_default:_api_v1_preserveservice_p_:e  -> ts_preserve_service_default:_api_v1_preserveservice_p_ [label = <<font color="#a2e81a">"323"</font>> arrowhead="empty" color="#a2e81a" penwidth=1.3020833333333333];
+ts_ui_dashboard_default:_api_v1_assuranceservice__:e  -> ts_assurance_service_default:_api_v1_assuranceservice__ [label = <<font color="#d3b832">"323"</font>> arrowhead="empty" color="#d3b832" penwidth=1.3541666666666665];
+ts_security_service_default:_api_v1_orderOtherService_:e  -> ts_order_other_service_default:_api_v1_orderOtherService_ [label = <<font color="#32490f">"323"</font>> arrowhead="empty" color="#32490f" penwidth=1.4062499999999998];
+ts_food_service_default:_api_v1_travelservice_rou_:e  -> ts_travel_service_default:_api_v1_travelservice_rou_ [label = <<font color="#88a162">"323"</font>> arrowhead="empty" color="#88a162" penwidth=1.458333333333333];
+ts_ui_dashboard_default:_api_v1_foodservice_foods_:e  -> ts_food_service_default:_api_v1_foodservice_foods_ [label = <<font color="#c0b838">"323"</font>> arrowhead="empty" color="#c0b838" penwidth=1.5104166666666663];
+ts_admin_user_service_default:_api_v1_userservice_users_:e  -> ts_user_service_default:_api_v1_userservice_users_ [label = <<font color="#e167c5">"324"</font>> arrowhead="empty" color="#e167c5" penwidth=1.5624999999999996];
+
+ts_admin_user_service_default[
+shape="record"
+label="<ts_admin_user_service_default> ts-admin-user-service.default"
+]
+ts_ui_dashboard_default:_api_v1_adminuserservice__:e  -> ts_admin_user_service_default:_api_v1_adminuserservice__ [label = <<font color="#71f989">"324"</font>> arrowhead="empty" color="#71f989" penwidth=1.6145833333333328];
+ts_user_service_default:_api_v1_auth:e  -> ts_auth_service_default:_api_v1_auth [label = <<font color="#10bc99">"324"</font>> arrowhead="empty" color="#10bc99" penwidth=1.666666666666666];
+ts_ui_dashboard_default:_api_v1_travelservice_tri_:e  -> ts_travel_service_default:_api_v1_travelservice_tri_ [label = <<font color="#4de515">"327"</font>> arrowhead="empty" color="#4de515" penwidth=1.7187499999999993];
+ts_order_service_default:_api_v1_stationservice_st_:e  -> ts_station_service_default:_api_v1_stationservice_st_ [label = <<font color="#ad6ccc">"328"</font>> arrowhead="empty" color="#ad6ccc" penwidth=1.7708333333333326];
+
+ts_order_service_default[
+shape="record"
+label="<ts_order_service_default> ts-order-service.default"
+]
+ts_ui_dashboard_default:_api_v1_orderservice_orde_:e  -> ts_order_service_default:_api_v1_orderservice_orde_ [label = <<font color="#4e7836">"328"</font>> arrowhead="empty" color="#4e7836" penwidth=1.8229166666666659];
+ts_seat_service_default:_api_v1_travelservice_rou_:e  -> ts_travel_service_default:_api_v1_travelservice_rou_ [label = <<font color="#8a03ae">"350"</font>> arrowhead="empty" color="#8a03ae" penwidth=1.8749999999999991];
+
+ts_seat_service_default[
+shape="record"
+label="<ts_seat_service_default> ts-seat-service.default"
+]
+ts_seat_service_default:_api_v1_orderservice_orde_:e  -> ts_order_service_default:_api_v1_orderservice_orde_ [label = <<font color="#d3c533">"350"</font>> arrowhead="empty" color="#d3c533" penwidth=1.9270833333333324];
+ts_seat_service_default:_api_v1_travelservice_tra_:e  -> ts_travel_service_default:_api_v1_travelservice_tra_ [label = <<font color="#b1d7ae">"350"</font>> arrowhead="empty" color="#b1d7ae" penwidth=1.9791666666666656];
+ts_seat_service_default:_api_v1_configservice_con_:e  -> ts_config_service_default:_api_v1_configservice_con_ [label = <<font color="#2aed17">"350"</font>> arrowhead="empty" color="#2aed17" penwidth=2.031249999999999];
+ts_travel_service_default:_api_v1_seatservice_seats_:e  -> ts_seat_service_default:_api_v1_seatservice_seats_ [label = <<font color="#0eb808">"350"</font>> arrowhead="empty" color="#0eb808" penwidth=2.0833333333333326];
+ts_travel_service_default:_api_v1_trainservice_trai_:e  -> ts_train_service_default:_api_v1_trainservice_trai_ [label = <<font color="#ac2267">"525"</font>> arrowhead="empty" color="#ac2267" penwidth=2.135416666666666];
+ts_food_service_default:_api_v1_stationservice_st_:e  -> ts_station_service_default:_api_v1_stationservice_st_ [label = <<font color="#933534">"646"</font>> arrowhead="empty" color="#933534" penwidth=2.1874999999999996];
+ts_ui_dashboard_default:_api_v1_contactservice_co_:e  -> ts_contacts_service_default:_api_v1_contactservice_co_ [label = <<font color="#c9551d">"646"</font>> arrowhead="empty" color="#c9551d" penwidth=2.239583333333333];
+ts_ui_dashboard_default:_api_v1_users_login:e  -> ts_auth_service_default:_api_v1_users_login [label = <<font color="#355b8c">"650"</font>> arrowhead="empty" color="#355b8c" penwidth=2.2916666666666665];
+ts_travel_service_default:_api_v1_ticketinfoservice_:e  -> ts_ticketinfo_service_default:_api_v1_ticketinfoservice_ [label = <<font color="#608660">"2175"</font>> arrowhead="empty" color="#608660" penwidth=2.34375];
+ts_ticketinfo_service_default:_api_v1_basicservice_basi_:e  -> ts_basic_service_default:_api_v1_basicservice_basi_ [label = <<font color="#60bb4c">"2177"</font>> arrowhead="empty" color="#60bb4c" penwidth=2.3958333333333335];
+
+ts_ticketinfo_service_default[
+shape="record"
+label="<ts_ticketinfo_service_default> ts-ticketinfo-service.default"
+]
+ts_travel_service_default:_api_v1_routeservice_rout_:e  -> ts_route_service_default:_api_v1_routeservice_rout_ [label = <<font color="#3647cb">"2631"</font>> arrowhead="empty" color="#3647cb" penwidth=2.447916666666667];
+ts_basic_service_default:_api_v1_stationservice_st_:e  -> ts_station_service_default:_api_v1_stationservice_st_ [label = <<font color="#72054e">"2702"</font>> arrowhead="empty" color="#72054e" penwidth=2.5000000000000004];
+
+ts_ticket_office_mongo_default[
+shape="record"
+label="<ts_ticket_office_mongo_default> ts-ticket-office-mongo.default|<_> /"
+]
+
+ts_route_service_default[
+shape="record"
+label="<ts_route_service_default> ts-route-service.default|<_api_v1_routeservice_rout_> /api/v1/routeservice/rout~"
+]
+
+ts_user_service_default[
+shape="record"
+label="<ts_user_service_default> ts-user-service.default|<_api_v1_userservice_users_> /api/v1/userservice/users~"
+]
+
+ts_seat_service_default[
+shape="record"
+label="<ts_seat_service_default> ts-seat-service.default|<_api_v1_seatservice_seats_> /api/v1/seatservice/seats~"
+]
+
+ts_basic_service_default[
+shape="record"
+label="<ts_basic_service_default> ts-basic-service.default|<_api_v1_basicservice_basi_> /api/v1/basicservice/basi~"
+]
+
+ts_station_service_default[
+shape="record"
+label="<ts_station_service_default> ts-station-service.default|<_api_v1_stationservice_st_> /api/v1/stationservice/st~"
+]
+
+ts_price_service_default[
+shape="record"
+label="<ts_price_service_default> ts-price-service.default|<_api_v1_priceservice_pric_> /api/v1/priceservice/pric~"
+]
+
+ts_voucher_mysql_default[
+shape="record"
+label="<ts_voucher_mysql_default> ts-voucher-mysql.default|<_> /"
+]
+
+ts_food_map_service_default[
+shape="record"
+label="<ts_food_map_service_default> ts-food-map-service.default|<_api_v1_foodmapservice_tr_> /api/v1/foodmapservice/tr~|<_api_v1_foodmapservice_fo_> /api/v1/foodmapservice/fo~"
+]
+
+ts_consign_price_mongo_default[
+shape="record"
+label="<ts_consign_price_mongo_default> ts-consign-price-mongo.default|<_> /"
+]
+
+ts_verification_code_service_default[
+shape="record"
+label="<ts_verification_code_service_default> ts-verification-code-service.default|<_api_v1_verifycode_genera_> /api/v1/verifycode/genera~|<_api_v1_verifycode_verify_> /api/v1/verifycode/verify~"
+]
+
+ts_preserve_service_default[
+shape="record"
+label="<ts_preserve_service_default> ts-preserve-service.default|<_api_v1_preserveservice_p_> /api/v1/preserveservice/p~"
+]
+
+ts_ticketinfo_service_default[
+shape="record"
+label="<ts_ticketinfo_service_default> ts-ticketinfo-service.default|<_api_v1_ticketinfoservice_> /api/v1/ticketinfoservice~"
+]
+
+ts_user_mongo_default[
+shape="record"
+label="<ts_user_mongo_default> ts-user-mongo.default|<_> /"
+]
+
+ts_train_service_default[
+shape="record"
+label="<ts_train_service_default> ts-train-service.default|<_api_v1_trainservice_trai_> /api/v1/trainservice/trai~"
+]
+
+ts_auth_service_default[
+shape="record"
+label="<ts_auth_service_default> ts-auth-service.default|<_api_v1_auth> /api/v1/auth|<_api_v1_users_login> /api/v1/users/login"
+]
+
+ts_contacts_service_default[
+shape="record"
+label="<ts_contacts_service_default> ts-contacts-service.default|<_api_v1_contactservice_co_> /api/v1/contactservice/co~"
+]
+
+ts_order_other_service_default[
+shape="record"
+label="<ts_order_other_service_default> ts-order-other-service.default|<_api_v1_orderOtherService_> /api/v1/orderOtherService~"
+]
+
+ts_admin_user_service_default[
+shape="record"
+label="<ts_admin_user_service_default> ts-admin-user-service.default|<_api_v1_adminuserservice__> /api/v1/adminuserservice/~"
+]
+
+ts_payment_mongo_default[
+shape="record"
+label="<ts_payment_mongo_default> ts-payment-mongo.default|<_> /"
+]
+
+ts_travel2_service_default[
+shape="record"
+label="<ts_travel2_service_default> ts-travel2-service.default|<_api_v1_travel2service_tr_> /api/v1/travel2service/tr~"
+]
+
+ts_consign_mongo_default[
+shape="record"
+label="<ts_consign_mongo_default> ts-consign-mongo.default|<_> /"
+]
+
+ts_consign_service_default[
+shape="record"
+label="<ts_consign_service_default> ts-consign-service.default|<_api_v1_consignservice_co_> /api/v1/consignservice/co~"
+]
+
+ts_assurance_service_default[
+shape="record"
+label="<ts_assurance_service_default> ts-assurance-service.default|<_api_v1_assuranceservice__> /api/v1/assuranceservice/~"
+]
+
+ts_travel_service_default[
+shape="record"
+label="<ts_travel_service_default> ts-travel-service.default|<_api_v1_travelservice_rou_> /api/v1/travelservice/rou~|<_api_v1_travelservice_tra_> /api/v1/travelservice/tra~|<_api_v1_travelservice_tri_> /api/v1/travelservice/tri~"
+]
+
+ts_order_service_default[
+shape="record"
+label="<ts_order_service_default> ts-order-service.default|<_api_v1_orderservice_orde_> /api/v1/orderservice/orde~"
+]
+
+ts_config_service_default[
+shape="record"
+label="<ts_config_service_default> ts-config-service.default|<_api_v1_configservice_con_> /api/v1/configservice/con~"
+]
+
+ts_travel2_mongo_default[
+shape="record"
+label="<ts_travel2_mongo_default> ts-travel2-mongo.default|<_> /"
+]
+
+ts_food_service_default[
+shape="record"
+label="<ts_food_service_default> ts-food-service.default|<_api_v1_foodservice_foods_> /api/v1/foodservice/foods~"
+]
+
+ts_assurance_mongo_default[
+shape="record"
+label="<ts_assurance_mongo_default> ts-assurance-mongo.default|<_> /"
+]
+
+ts_config_mongo_default[
+shape="record"
+label="<ts_config_mongo_default> ts-config-mongo.default|<_> /"
+]
+}
