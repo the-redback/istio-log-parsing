@@ -1,0 +1,115 @@
+2022-04-11T08:48:32.216295Z	info	FLAG: --concurrency="2"
+2022-04-11T08:48:32.216400Z	info	FLAG: --domain="default.svc.cluster.local"
+2022-04-11T08:48:32.216416Z	info	FLAG: --help="false"
+2022-04-11T08:48:32.216463Z	info	FLAG: --log_as_json="false"
+2022-04-11T08:48:32.216489Z	info	FLAG: --log_caller=""
+2022-04-11T08:48:32.216498Z	info	FLAG: --log_output_level="default:info"
+2022-04-11T08:48:32.216503Z	info	FLAG: --log_rotate=""
+2022-04-11T08:48:32.216510Z	info	FLAG: --log_rotate_max_age="30"
+2022-04-11T08:48:32.216516Z	info	FLAG: --log_rotate_max_backups="1000"
+2022-04-11T08:48:32.216522Z	info	FLAG: --log_rotate_max_size="104857600"
+2022-04-11T08:48:32.216528Z	info	FLAG: --log_stacktrace_level="default:none"
+2022-04-11T08:48:32.216545Z	info	FLAG: --log_target="[stdout]"
+2022-04-11T08:48:32.216552Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2022-04-11T08:48:32.216558Z	info	FLAG: --outlierLogPath=""
+2022-04-11T08:48:32.216563Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2022-04-11T08:48:32.216569Z	info	FLAG: --proxyLogLevel="warning"
+2022-04-11T08:48:32.216575Z	info	FLAG: --serviceCluster="istio-proxy"
+2022-04-11T08:48:32.216581Z	info	FLAG: --stsPort="0"
+2022-04-11T08:48:32.216586Z	info	FLAG: --templateFile=""
+2022-04-11T08:48:32.216592Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2022-04-11T08:48:32.216601Z	info	FLAG: --vklog="0"
+2022-04-11T08:48:32.216608Z	info	Version 1.13.2-91533d04e894ff86b80acd6d7a4517b144f9e19a-Clean
+2022-04-11T08:48:32.217054Z	info	Proxy role	ips=[10.244.0.114 fe80::60cb:97ff:fe77:5911] type=sidecar id=ts-consign-service-856df966b-mrbp7.default domain=default.svc.cluster.local
+2022-04-11T08:48:32.217251Z	info	Apply proxy config from env {}
+
+2022-04-11T08:48:32.348324Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2022-04-11T08:48:32.348415Z	info	JWT policy is third-party-jwt
+2022-04-11T08:48:32.367245Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2022-04-11T08:48:32.367390Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2022-04-11T08:48:32.368574Z	info	Opening status port 15020
+2022-04-11T08:48:32.375720Z	info	citadelclient	Citadel client using custom root cert: var/run/secrets/istio/root-cert.pem
+2022-04-11T08:48:33.342101Z	info	ads	All caches have been synced up in 1.610939668s, marking server ready
+2022-04-11T08:48:33.383324Z	info	sds	SDS server for workload certificates started, listening on "etc/istio/proxy/SDS"
+2022-04-11T08:48:33.383451Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2022-04-11T08:48:33.428951Z	info	sds	Starting SDS grpc server
+2022-04-11T08:48:33.429432Z	info	starting Http service at 127.0.0.1:15004
+2022-04-11T08:48:33.448981Z	info	Pilot SAN: [istiod.istio-system.svc]
+2022-04-11T08:48:33.532254Z	info	Starting proxy agent
+2022-04-11T08:48:33.532377Z	info	Epoch 0 starting
+2022-04-11T08:48:33.532437Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --drain-strategy immediate --parent-shutdown-time-s 60 --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2022-04-11T08:48:50.985136Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T08:48:57.037724Z	info	cache	generated new workload certificate	latency=23.657274111s ttl=23h59m54.962295451s
+2022-04-11T08:48:57.037771Z	info	cache	Root cert has changed, start rotating root cert
+2022-04-11T08:48:57.053750Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:0 Version:
+2022-04-11T08:48:57.053915Z	info	cache	returned workload trust anchor from cache	ttl=23h59m54.946098368s
+2022-04-11T08:50:03.431902Z	info	ads	ADS: new connection for node:ts-consign-service-856df966b-mrbp7.default-1
+2022-04-11T08:50:03.432084Z	info	cache	returned workload trust anchor from cache	ttl=23h58m48.567925223s
+2022-04-11T08:50:03.454994Z	info	ads	SDS: PUSH request for node:ts-consign-service-856df966b-mrbp7.default resources:1 size:1.1kB resource:ROOTCA
+2022-04-11T08:50:03.492226Z	info	ads	ADS: new connection for node:ts-consign-service-856df966b-mrbp7.default-2
+2022-04-11T08:50:03.492375Z	info	cache	returned workload certificate from cache	ttl=23h58m48.507633182s
+2022-04-11T08:50:03.492527Z	info	ads	SDS: PUSH request for node:ts-consign-service-856df966b-mrbp7.default resources:1 size:4.0kB resource:default
+2022-04-11T08:50:31.677351Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:50:42.511209Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:50:57.780147Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:51:17.357780Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:51:32.892118Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:51:42.559915Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:09.636040Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:18.605182Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:27.330265Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:43.195720Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:54:14.180789Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed: 13, 
+2022-04-11T08:54:27.972368Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:54:41.064118Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:54:44.217280Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:54:51.877813Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 36s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:54:53.828315Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 38s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:55:00.783792Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:55:30.336566Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 75s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:55:58.855685Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 103s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:04.801592Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 109s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:32.641518Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 137s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:37.997445Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 142s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:40.176883Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 144s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:53.428595Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 158s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:57:04.595690Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 169s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:57:05.902906Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 170s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:57:08.526853Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:57:09.446560Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 174s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:57:16.615645Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:57:24.912590Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 189s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:58:14.032354Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 238s ago: 14, connection error: desc = "transport: authentication handshake failed: context deadline exceeded"
+2022-04-11T08:58:43.899066Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 268s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:58:47.347749Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 272s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:59:11.406295Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 296s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:59:34.119181Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 319s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:59:42.309985Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T09:02:23.350515Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:02:25.430854Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:02:26.308263Z	info	Readiness succeeded in 13m55.12134019s
+2022-04-11T09:02:26.398246Z	info	Envoy proxy is ready
+{"requested_server_name":"outbound_.16111_._.ts-consign-service.default.svc.cluster.local","upstream_local_address":"127.0.0.6:53911","protocol":"HTTP/1.1","bytes_received":0,"method":"GET","upstream_transport_failure_reason":null,"downstream_local_address":"10.244.0.114:16111","upstream_service_time":null,"upstream_host":"10.244.0.114:16111","upstream_cluster":"inbound|16111||","path":"/api/v1/consignservice/consigns/account/4d2a46c7-71cb-4cf1-b5bb-b68406d9da6f","x_forwarded_for":null,"start_time":"2022-04-11T09:16:56.649Z","route_name":"default","response_code_details":"downstream_remote_disconnect","downstream_remote_address":"10.244.0.144:55080","duration":1282,"response_code":0,"response_flags":"DC","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36","authority":"ts-consign-service:16111","connection_termination_details":null,"request_id":"44d3f563-9bff-9c40-bc73-e97021f6bb0a","bytes_sent":0}
+2022-04-11T09:32:03.399152Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T10:01:13.030483Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T10:33:53.339791Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+{"bytes_received":643,"downstream_local_address":"10.96.77.125:27017","upstream_cluster":"outbound|27017||ts-consign-mongo.default.svc.cluster.local","requested_server_name":null,"response_flags":"-","response_code_details":null,"x_forwarded_for":null,"connection_termination_details":null,"upstream_transport_failure_reason":null,"authority":null,"upstream_host":"10.244.0.99:27017","protocol":null,"user_agent":null,"request_id":null,"upstream_service_time":null,"bytes_sent":2523,"upstream_local_address":"10.244.0.114:58170","path":null,"method":null,"duration":5858099,"start_time":"2022-04-11T09:17:17.495Z","route_name":null,"response_code":0,"downstream_remote_address":"10.244.0.114:44718"}
+{"bytes_sent":374,"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36","authority":"ts-consign-service:16111","downstream_remote_address":"10.244.0.144:56270","upstream_host":"10.244.0.114:16111","duration":1363,"request_id":"5389078c-e27e-933d-8619-796e45ab9a55","path":"/api/v1/consignservice/consigns/account/4d2a46c7-71cb-4cf1-b5bb-b68406d9da6f","downstream_local_address":"10.244.0.114:16111","route_name":"default","upstream_cluster":"inbound|16111||","x_forwarded_for":null,"upstream_local_address":"127.0.0.6:46185","response_code":500,"start_time":"2022-04-11T10:54:50.771Z","upstream_service_time":"1352","connection_termination_details":null,"bytes_received":0,"response_code_details":"via_upstream","response_flags":"-","method":"GET","upstream_transport_failure_reason":null,"protocol":"HTTP/1.1","requested_server_name":"outbound_.16111_._.ts-consign-service.default.svc.cluster.local"}
+{"start_time":"2022-04-11T10:56:11.369Z","connection_termination_details":null,"upstream_local_address":"127.0.0.6:41469","path":"/api/v1/consignservice/consigns/account/4d2a46c7-71cb-4cf1-b5bb-b68406d9da6f","request_id":"04777f7f-a5d6-96e4-a513-eb81f7f86054","upstream_host":"10.244.0.114:16111","downstream_remote_address":"10.244.0.144:56270","method":"GET","response_flags":"-","protocol":"HTTP/1.1","upstream_service_time":"204","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36","response_code_details":"via_upstream","response_code":200,"x_forwarded_for":null,"duration":210,"route_name":"default","downstream_local_address":"10.244.0.114:16111","requested_server_name":"outbound_.16111_._.ts-consign-service.default.svc.cluster.local","bytes_sent":66,"bytes_received":0,"upstream_cluster":"inbound|16111||","upstream_transport_failure_reason":null,"authority":"ts-consign-service:16111"}
+{"route_name":"default","response_flags":"-","start_time":"2022-04-11T10:58:18.499Z","path":"/api/v1/consignservice/consigns/order/5ad7750b-a68b-49c0-a8c0-32776b067703","bytes_received":0,"protocol":"HTTP/1.1","request_id":"3666f800-9e9c-9697-8526-1e1720e09541","downstream_remote_address":"10.244.0.144:46388","upstream_local_address":"127.0.0.6:50243","method":"GET","requested_server_name":"outbound_.16111_._.ts-consign-service.default.svc.cluster.local","downstream_local_address":"10.244.0.114:16111","upstream_transport_failure_reason":null,"duration":106,"upstream_host":"10.244.0.114:16111","response_code_details":"via_upstream","upstream_service_time":"95","response_code":200,"connection_termination_details":null,"x_forwarded_for":null,"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36","upstream_cluster":"inbound|16111||","authority":"ts-consign-service:16111","bytes_sent":65}
+{"bytes_received":0,"path":"/api/v1/consignservice/consigns/account/4d2a46c7-71cb-4cf1-b5bb-b68406d9da6f","protocol":"HTTP/1.1","upstream_local_address":"127.0.0.6:33967","bytes_sent":66,"response_code_details":"via_upstream","authority":"ts-consign-service:16111","requested_server_name":"outbound_.16111_._.ts-consign-service.default.svc.cluster.local","upstream_service_time":"75","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36","request_id":"4f82f223-6b87-932f-bec3-afbf01337e67","downstream_local_address":"10.244.0.114:16111","upstream_transport_failure_reason":null,"start_time":"2022-04-11T10:58:23.299Z","response_flags":"-","response_code":200,"route_name":"default","method":"GET","upstream_host":"10.244.0.114:16111","upstream_cluster":"inbound|16111||","x_forwarded_for":null,"duration":80,"downstream_remote_address":"10.244.0.144:56270","connection_termination_details":null}

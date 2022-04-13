@@ -1,0 +1,91 @@
+2022-04-11T08:48:16.507387Z	info	FLAG: --concurrency="2"
+2022-04-11T08:48:16.507466Z	info	FLAG: --domain="default.svc.cluster.local"
+2022-04-11T08:48:16.507479Z	info	FLAG: --help="false"
+2022-04-11T08:48:16.507484Z	info	FLAG: --log_as_json="false"
+2022-04-11T08:48:16.507489Z	info	FLAG: --log_caller=""
+2022-04-11T08:48:16.507509Z	info	FLAG: --log_output_level="default:info"
+2022-04-11T08:48:16.507518Z	info	FLAG: --log_rotate=""
+2022-04-11T08:48:16.507523Z	info	FLAG: --log_rotate_max_age="30"
+2022-04-11T08:48:16.507528Z	info	FLAG: --log_rotate_max_backups="1000"
+2022-04-11T08:48:16.507533Z	info	FLAG: --log_rotate_max_size="104857600"
+2022-04-11T08:48:16.507538Z	info	FLAG: --log_stacktrace_level="default:none"
+2022-04-11T08:48:16.507560Z	info	FLAG: --log_target="[stdout]"
+2022-04-11T08:48:16.507567Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2022-04-11T08:48:16.507572Z	info	FLAG: --outlierLogPath=""
+2022-04-11T08:48:16.507577Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2022-04-11T08:48:16.507581Z	info	FLAG: --proxyLogLevel="warning"
+2022-04-11T08:48:16.507586Z	info	FLAG: --serviceCluster="istio-proxy"
+2022-04-11T08:48:16.507591Z	info	FLAG: --stsPort="0"
+2022-04-11T08:48:16.507596Z	info	FLAG: --templateFile=""
+2022-04-11T08:48:16.507601Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2022-04-11T08:48:16.507608Z	info	FLAG: --vklog="0"
+2022-04-11T08:48:16.507614Z	info	Version 1.13.2-91533d04e894ff86b80acd6d7a4517b144f9e19a-Clean
+2022-04-11T08:48:16.507956Z	info	Proxy role	ips=[10.244.0.99 fe80::d8e9:43ff:fe42:a92f] type=sidecar id=ts-consign-mongo-85dc96494f-d7m7v.default domain=default.svc.cluster.local
+2022-04-11T08:48:16.508078Z	info	Apply proxy config from env {}
+
+2022-04-11T08:48:16.516852Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2022-04-11T08:48:16.516935Z	info	JWT policy is third-party-jwt
+2022-04-11T08:48:16.520368Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2022-04-11T08:48:16.520468Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2022-04-11T08:48:16.521760Z	info	Opening status port 15020
+2022-04-11T08:48:16.523120Z	info	citadelclient	Citadel client using custom root cert: var/run/secrets/istio/root-cert.pem
+2022-04-11T08:48:16.700874Z	info	ads	All caches have been synced up in 345.391689ms, marking server ready
+2022-04-11T08:48:16.803711Z	info	sds	SDS server for workload certificates started, listening on "etc/istio/proxy/SDS"
+2022-04-11T08:48:16.803831Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2022-04-11T08:48:16.804898Z	info	starting Http service at 127.0.0.1:15004
+2022-04-11T08:48:16.804995Z	info	sds	Starting SDS grpc server
+2022-04-11T08:48:16.879261Z	info	Pilot SAN: [istiod.istio-system.svc]
+2022-04-11T08:48:17.050917Z	info	Starting proxy agent
+2022-04-11T08:48:17.051086Z	info	Epoch 0 starting
+2022-04-11T08:48:17.051154Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --drain-strategy immediate --parent-shutdown-time-s 60 --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2022-04-11T08:48:21.742376Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T08:48:27.079546Z	info	ads	ADS: new connection for node:ts-consign-mongo-85dc96494f-d7m7v.default-1
+2022-04-11T08:48:27.226334Z	info	ads	ADS: new connection for node:ts-consign-mongo-85dc96494f-d7m7v.default-2
+2022-04-11T08:48:37.411071Z	info	cache	generated new workload certificate	latency=20.688983478s ttl=23h59m59.588955871s
+2022-04-11T08:48:37.411238Z	info	cache	Root cert has changed, start rotating root cert
+2022-04-11T08:48:37.411270Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:
+2022-04-11T08:48:37.411352Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.588653371s
+2022-04-11T08:48:37.411395Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.588609506s
+2022-04-11T08:48:37.412019Z	info	ads	SDS: PUSH request for node:ts-consign-mongo-85dc96494f-d7m7v.default resources:1 size:1.1kB resource:ROOTCA
+2022-04-11T08:48:37.412194Z	info	cache	returned workload certificate from cache	ttl=23h59m59.587811653s
+2022-04-11T08:48:37.412319Z	info	ads	SDS: PUSH request for node:ts-consign-mongo-85dc96494f-d7m7v.default resources:1 size:4.0kB resource:default
+2022-04-11T08:48:37.412418Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.587586609s
+2022-04-11T08:48:37.412457Z	info	ads	SDS: PUSH for node:ts-consign-mongo-85dc96494f-d7m7v.default resources:1 size:1.1kB resource:ROOTCA
+2022-04-11T08:49:01.762495Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:49:18.076497Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:49:33.496494Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:49:46.408358Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:50:01.151925Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:50:27.582474Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:50:33.705055Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:50:47.245687Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:51:02.395227Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:51:17.783041Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:51:31.787024Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:51:46.279214Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:05.600525Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:16.562377Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:32.181528Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:54:24.840636Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T08:54:25.671731Z	info	Readiness succeeded in 6m9.48418796s
+2022-04-11T08:54:25.691805Z	info	Envoy proxy is ready
+2022-04-11T09:07:47.779164Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T09:38:27.373765Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T10:07:19.852799Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+{"bytes_received":1284,"method":null,"route_name":null,"upstream_local_address":"127.0.0.6:53749","protocol":null,"user_agent":null,"request_id":null,"authority":null,"x_forwarded_for":null,"upstream_transport_failure_reason":null,"response_flags":"-","bytes_sent":3263,"upstream_cluster":"inbound|27017||","requested_server_name":"outbound_.27017_._.ts-consign-mongo.default.svc.cluster.local","path":null,"response_code":0,"duration":3600815,"downstream_local_address":"10.244.0.99:27017","response_code_details":null,"start_time":"2022-04-11T09:17:17.503Z","upstream_service_time":null,"downstream_remote_address":"10.244.0.114:58170","connection_termination_details":null,"upstream_host":"10.244.0.99:27017"}
+2022-04-11T10:39:29.422757Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012

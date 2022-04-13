@@ -1,0 +1,104 @@
+2022-04-11T08:49:01.808142Z	info	FLAG: --concurrency="2"
+2022-04-11T08:49:01.825304Z	info	FLAG: --domain="default.svc.cluster.local"
+2022-04-11T08:49:01.825789Z	info	FLAG: --help="false"
+2022-04-11T08:49:01.825864Z	info	FLAG: --log_as_json="false"
+2022-04-11T08:49:01.825877Z	info	FLAG: --log_caller=""
+2022-04-11T08:49:01.825885Z	info	FLAG: --log_output_level="default:info"
+2022-04-11T08:49:01.825891Z	info	FLAG: --log_rotate=""
+2022-04-11T08:49:01.825899Z	info	FLAG: --log_rotate_max_age="30"
+2022-04-11T08:49:01.825905Z	info	FLAG: --log_rotate_max_backups="1000"
+2022-04-11T08:49:01.825990Z	info	FLAG: --log_rotate_max_size="104857600"
+2022-04-11T08:49:01.826024Z	info	FLAG: --log_stacktrace_level="default:none"
+2022-04-11T08:49:01.856293Z	info	FLAG: --log_target="[stdout]"
+2022-04-11T08:49:01.856390Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2022-04-11T08:49:01.856461Z	info	FLAG: --outlierLogPath=""
+2022-04-11T08:49:01.856472Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2022-04-11T08:49:01.856479Z	info	FLAG: --proxyLogLevel="warning"
+2022-04-11T08:49:01.856485Z	info	FLAG: --serviceCluster="istio-proxy"
+2022-04-11T08:49:01.856497Z	info	FLAG: --stsPort="0"
+2022-04-11T08:49:01.856514Z	info	FLAG: --templateFile=""
+2022-04-11T08:49:01.856525Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2022-04-11T08:49:01.856542Z	info	FLAG: --vklog="0"
+2022-04-11T08:49:01.856557Z	info	Version 1.13.2-91533d04e894ff86b80acd6d7a4517b144f9e19a-Clean
+2022-04-11T08:49:01.857126Z	info	Proxy role	ips=[10.244.0.132 fe80::14cd:24ff:feb3:3038] type=sidecar id=ts-rebook-service-6d9f8d4497-7nqgd.default domain=default.svc.cluster.local
+2022-04-11T08:49:01.857523Z	info	Apply proxy config from env {}
+
+2022-04-11T08:49:04.442188Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2022-04-11T08:49:04.442291Z	info	JWT policy is third-party-jwt
+2022-04-11T08:49:04.836354Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2022-04-11T08:49:04.836562Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2022-04-11T08:49:04.836746Z	info	citadelclient	Citadel client using custom root cert: var/run/secrets/istio/root-cert.pem
+2022-04-11T08:49:04.877830Z	info	Opening status port 15020
+2022-04-11T08:49:09.653700Z	info	ads	All caches have been synced up in 9.268085138s, marking server ready
+2022-04-11T08:49:09.829850Z	info	sds	SDS server for workload certificates started, listening on "etc/istio/proxy/SDS"
+2022-04-11T08:49:09.829982Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2022-04-11T08:49:09.830518Z	info	sds	Starting SDS grpc server
+2022-04-11T08:49:10.022641Z	info	starting Http service at 127.0.0.1:15004
+2022-04-11T08:49:10.682891Z	info	Pilot SAN: [istiod.istio-system.svc]
+2022-04-11T08:49:10.960006Z	info	Starting proxy agent
+2022-04-11T08:49:11.308684Z	info	Epoch 0 starting
+2022-04-11T08:49:11.308830Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --drain-strategy immediate --parent-shutdown-time-s 60 --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2022-04-11T08:49:35.437248Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T08:49:45.196452Z	info	cache	generated new workload certificate	latency=35.43248475s ttl=23h59m52.80385824s
+2022-04-11T08:49:45.196590Z	info	cache	Root cert has changed, start rotating root cert
+2022-04-11T08:49:45.196696Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:0 Version:
+2022-04-11T08:49:45.196788Z	info	cache	returned workload trust anchor from cache	ttl=23h59m52.803219695s
+2022-04-11T08:50:46.592503Z	info	ads	ADS: new connection for node:ts-rebook-service-6d9f8d4497-7nqgd.default-1
+2022-04-11T08:50:46.592779Z	info	cache	returned workload trust anchor from cache	ttl=23h58m51.407233085s
+2022-04-11T08:50:46.636477Z	info	ads	ADS: new connection for node:ts-rebook-service-6d9f8d4497-7nqgd.default-2
+2022-04-11T08:50:46.636703Z	info	cache	returned workload certificate from cache	ttl=23h58m51.363322174s
+2022-04-11T08:50:46.637095Z	info	ads	SDS: PUSH request for node:ts-rebook-service-6d9f8d4497-7nqgd.default resources:1 size:4.0kB resource:default
+2022-04-11T08:50:47.275550Z	info	ads	SDS: PUSH request for node:ts-rebook-service-6d9f8d4497-7nqgd.default resources:1 size:1.1kB resource:ROOTCA
+2022-04-11T08:51:31.419178Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:08.776675Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:24.530259Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:31.337233Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:45.648789Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:54:19.160825Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed: 13, 
+2022-04-11T08:54:53.961943Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 34s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:55:40.353287Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 80s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:55:43.792134Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 83s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:55:57.598532Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 97s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:14.510499Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 114s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:43.981064Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 144s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:57:07.984064Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 168s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:57:58.808412Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 218s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: i/o timeout"
+2022-04-11T08:58:15.470713Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T09:00:28.177959Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:00:29.361554Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:00:30.999872Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:00:32.783521Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:00:37.731205Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:00:40.599925Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:00:43.078778Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:00:44.990604Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:00:46.942291Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:00:51.750344Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:00:52.058212Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:00:53.414912Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:00:54.827428Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:00:58.017996Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:01:00.285896Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:01:02.665346Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:01:03.899967Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:01:05.043533Z	info	Readiness succeeded in 12m3.933524954s
+2022-04-11T09:01:05.769086Z	info	Envoy proxy is ready
+2022-04-11T09:29:47.965881Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T10:02:07.241187Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T10:29:20.751789Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T11:00:27.548521Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012

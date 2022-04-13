@@ -101,10 +101,10 @@ public class Controller {
 
                     String DestSvc = GetDestinationService(value);
                     String path = (String) map.get("path");
-                    System.out.println(">>1<< "+ DestSvc + " " +path);
+//                    System.out.println(">>1<< "+ DestSvc + " " +path);
                     if (DestSvc.equals("")) continue;
                     if (path == null) {
-                        System.out.println(DestSvc+"---------"+path);
+//                        System.out.println(DestSvc+"---------"+path);
                         path="/";
                     };
 
@@ -118,7 +118,7 @@ public class Controller {
 
                     if (DestSvc.equals(wildcardDns)) {
                         DestSvc=wildcardProxy;
-                        System.out.println("------------"+DestSvc);
+//                        System.out.println("------------"+DestSvc);
                     }
                     InsertIntoFunctionMap(ServiceName, DestSvc, path);
                 }
@@ -135,7 +135,7 @@ public class Controller {
 
     public List<String> GetFiles(File[] files) {
         List<String> result = new ArrayList<>();
-        System.out.println(">>>>>>>>> " + files);
+//        System.out.println(">>>>>>>>> " + files);
         for (File file : files) {
             if (file.isDirectory()) {
                 GetFiles(file.listFiles()); // Calls same method again.

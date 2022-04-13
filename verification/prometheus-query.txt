@@ -1,0 +1,1 @@
+sum(istio_requests_total{reporter="source"}) by (source_workload, destination_workload)

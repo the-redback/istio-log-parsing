@@ -1,5 +1,6 @@
 package com.cloudhubs.istiologparser;
 
+import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -44,8 +45,8 @@ public class GVGenerator {
                     Integer value = x.getValue();
                     nestedMap.forEach((fromSvc, secondNestedMap) -> {
                         secondNestedMap.forEach((toSvc, toEndPoint) -> {
-                            if (toEndPoint==null)
-                                toEndPoint=toSvc;
+                            if (toEndPoint == null)
+                                toEndPoint = toSvc;
                             String fromSvcID = formatNodeName(fromSvc);
                             String toSvcID = formatNodeName(toSvc);
                             String toEndPointID = formatNodeName(toEndPoint);
@@ -203,9 +204,11 @@ public class GVGenerator {
 
         // create a big random number - maximum is ffffff (hex) = 16777215 (dez)
         int nextInt = random.nextInt(0xffffff + 1);
+        Color c = new Color(nextInt).darker();
 
         // format it as hexadecimal string (with hashtag and leading zeros)
-        return String.format("#%06x", nextInt);
+//        return String.format("#%06x", nextInt);
+        return String.format("#%02x%02x%02x", c.getRed(), c.getGreen(), c.getBlue());
     }
 
 //    private static String getLinkLabel(RestEntity restEntity) {

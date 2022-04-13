@@ -1,0 +1,75 @@
+2022-04-11T09:09:14.492384Z	info	FLAG: --concurrency="2"
+2022-04-11T09:09:14.538068Z	info	FLAG: --domain="default.svc.cluster.local"
+2022-04-11T09:09:14.538131Z	info	FLAG: --help="false"
+2022-04-11T09:09:14.538183Z	info	FLAG: --log_as_json="false"
+2022-04-11T09:09:14.538255Z	info	FLAG: --log_caller=""
+2022-04-11T09:09:14.538270Z	info	FLAG: --log_output_level="default:info"
+2022-04-11T09:09:14.538276Z	info	FLAG: --log_rotate=""
+2022-04-11T09:09:14.538287Z	info	FLAG: --log_rotate_max_age="30"
+2022-04-11T09:09:14.538340Z	info	FLAG: --log_rotate_max_backups="1000"
+2022-04-11T09:09:14.538370Z	info	FLAG: --log_rotate_max_size="104857600"
+2022-04-11T09:09:14.538378Z	info	FLAG: --log_stacktrace_level="default:none"
+2022-04-11T09:09:14.538417Z	info	FLAG: --log_target="[stdout]"
+2022-04-11T09:09:14.538490Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2022-04-11T09:09:14.538506Z	info	FLAG: --outlierLogPath=""
+2022-04-11T09:09:14.538512Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2022-04-11T09:09:14.538516Z	info	FLAG: --proxyLogLevel="warning"
+2022-04-11T09:09:14.538520Z	info	FLAG: --serviceCluster="istio-proxy"
+2022-04-11T09:09:14.538716Z	info	FLAG: --stsPort="0"
+2022-04-11T09:09:14.538736Z	info	FLAG: --templateFile=""
+2022-04-11T09:09:14.538776Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2022-04-11T09:09:14.550979Z	info	FLAG: --vklog="0"
+2022-04-11T09:09:14.551090Z	info	Version 1.13.2-91533d04e894ff86b80acd6d7a4517b144f9e19a-Clean
+2022-04-11T09:09:14.551939Z	info	Proxy role	ips=[10.244.0.145 fe80::b40e:71ff:fe52:c335] type=sidecar id=ts-avatar-service-554dd6ccc7-zlfhq.default domain=default.svc.cluster.local
+2022-04-11T09:09:14.552282Z	info	Apply proxy config from env {}
+
+2022-04-11T09:09:14.933322Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2022-04-11T09:09:14.960228Z	info	JWT policy is third-party-jwt
+2022-04-11T09:09:15.643955Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2022-04-11T09:09:15.644070Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2022-04-11T09:09:15.644237Z	info	citadelclient	Citadel client using custom root cert: var/run/secrets/istio/root-cert.pem
+2022-04-11T09:09:15.669217Z	info	Opening status port 15020
+2022-04-11T09:09:16.795047Z	info	ads	All caches have been synced up in 2.705025524s, marking server ready
+2022-04-11T09:09:16.858507Z	info	sds	SDS server for workload certificates started, listening on "etc/istio/proxy/SDS"
+2022-04-11T09:09:16.859131Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2022-04-11T09:09:16.858702Z	info	sds	Starting SDS grpc server
+2022-04-11T09:09:16.862753Z	info	starting Http service at 127.0.0.1:15004
+2022-04-11T09:09:16.886518Z	info	Pilot SAN: [istiod.istio-system.svc]
+2022-04-11T09:09:16.894123Z	info	Starting proxy agent
+2022-04-11T09:09:16.894378Z	info	Epoch 0 starting
+2022-04-11T09:09:16.894430Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --drain-strategy immediate --parent-shutdown-time-s 60 --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2022-04-11T09:09:18.759142Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T09:09:19.881079Z	info	ads	ADS: new connection for node:ts-avatar-service-554dd6ccc7-zlfhq.default-1
+2022-04-11T09:09:19.913367Z	info	ads	ADS: new connection for node:ts-avatar-service-554dd6ccc7-zlfhq.default-2
+2022-04-11T09:09:30.047575Z	info	cache	generated new workload certificate	latency=13.24490292s ttl=23h59m58.952606311s
+2022-04-11T09:09:30.048636Z	info	cache	Root cert has changed, start rotating root cert
+2022-04-11T09:09:30.049469Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:
+2022-04-11T09:09:30.050817Z	info	cache	returned workload trust anchor from cache	ttl=23h59m58.949322899s
+2022-04-11T09:09:30.052016Z	info	cache	returned workload certificate from cache	ttl=23h59m58.947992408s
+2022-04-11T09:09:30.062229Z	info	ads	SDS: PUSH request for node:ts-avatar-service-554dd6ccc7-zlfhq.default resources:1 size:4.0kB resource:default
+2022-04-11T09:09:30.063036Z	info	cache	returned workload trust anchor from cache	ttl=23h59m58.936975793s
+2022-04-11T09:09:30.063644Z	info	ads	SDS: PUSH request for node:ts-avatar-service-554dd6ccc7-zlfhq.default resources:1 size:1.1kB resource:ROOTCA
+2022-04-11T09:09:30.064668Z	info	cache	returned workload trust anchor from cache	ttl=23h59m58.935341806s
+2022-04-11T09:09:30.064999Z	info	ads	SDS: PUSH for node:ts-avatar-service-554dd6ccc7-zlfhq.default resources:1 size:1.1kB resource:ROOTCA
+2022-04-11T09:09:36.214296Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T09:09:37.150259Z	info	Readiness succeeded in 22.976053383s
+2022-04-11T09:09:37.160780Z	info	Envoy proxy is ready
+2022-04-11T09:37:19.427923Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T10:06:27.785008Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T10:37:51.233041Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+{"response_code":400,"upstream_local_address":"127.0.0.6:36179","method":"POST","protocol":"HTTP/1.1","requested_server_name":"outbound_.17001_._.ts-avatar-service.default.svc.cluster.local","x_forwarded_for":null,"upstream_transport_failure_reason":null,"downstream_local_address":"10.244.0.145:17001","route_name":"default","upstream_host":"10.244.0.145:17001","bytes_received":14734,"duration":2664,"upstream_service_time":"2646","response_flags":"-","downstream_remote_address":"10.244.0.144:51364","start_time":"2022-04-11T10:54:40.696Z","connection_termination_details":null,"response_code_details":"via_upstream","path":"/api/v1/avatar","bytes_sent":30,"request_id":"b47dffb2-6d32-9d43-9f6a-ea93c6b7daf6","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36","authority":"ts-avatar-service:17001","upstream_cluster":"inbound|17001||"}

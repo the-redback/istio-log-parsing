@@ -1,0 +1,107 @@
+2022-04-11T08:48:29.688776Z	info	FLAG: --concurrency="2"
+2022-04-11T08:48:29.688951Z	info	FLAG: --domain="default.svc.cluster.local"
+2022-04-11T08:48:29.688967Z	info	FLAG: --help="false"
+2022-04-11T08:48:29.688977Z	info	FLAG: --log_as_json="false"
+2022-04-11T08:48:29.692531Z	info	FLAG: --log_caller=""
+2022-04-11T08:48:29.692739Z	info	FLAG: --log_output_level="default:info"
+2022-04-11T08:48:29.692752Z	info	FLAG: --log_rotate=""
+2022-04-11T08:48:29.692760Z	info	FLAG: --log_rotate_max_age="30"
+2022-04-11T08:48:29.692767Z	info	FLAG: --log_rotate_max_backups="1000"
+2022-04-11T08:48:29.692773Z	info	FLAG: --log_rotate_max_size="104857600"
+2022-04-11T08:48:29.692779Z	info	FLAG: --log_stacktrace_level="default:none"
+2022-04-11T08:48:29.692817Z	info	FLAG: --log_target="[stdout]"
+2022-04-11T08:48:29.692828Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2022-04-11T08:48:29.692833Z	info	FLAG: --outlierLogPath=""
+2022-04-11T08:48:29.692839Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2022-04-11T08:48:29.692844Z	info	FLAG: --proxyLogLevel="warning"
+2022-04-11T08:48:29.692924Z	info	FLAG: --serviceCluster="istio-proxy"
+2022-04-11T08:48:29.692938Z	info	FLAG: --stsPort="0"
+2022-04-11T08:48:29.692945Z	info	FLAG: --templateFile=""
+2022-04-11T08:48:29.692951Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2022-04-11T08:48:29.692962Z	info	FLAG: --vklog="0"
+2022-04-11T08:48:29.692969Z	info	Version 1.13.2-91533d04e894ff86b80acd6d7a4517b144f9e19a-Clean
+2022-04-11T08:48:29.693386Z	info	Proxy role	ips=[10.244.0.113 fe80::606a:38ff:fed8:8e1e] type=sidecar id=ts-consign-price-service-859c6f45bd-flhdb.default domain=default.svc.cluster.local
+2022-04-11T08:48:29.693597Z	info	Apply proxy config from env {}
+
+2022-04-11T08:48:29.708726Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2022-04-11T08:48:29.708908Z	info	JWT policy is third-party-jwt
+2022-04-11T08:48:29.991162Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2022-04-11T08:48:29.991363Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2022-04-11T08:48:29.991516Z	info	citadelclient	Citadel client using custom root cert: var/run/secrets/istio/root-cert.pem
+2022-04-11T08:48:30.009575Z	info	Opening status port 15020
+2022-04-11T08:48:30.430065Z	info	ads	All caches have been synced up in 755.790589ms, marking server ready
+2022-04-11T08:48:30.430558Z	info	sds	SDS server for workload certificates started, listening on "etc/istio/proxy/SDS"
+2022-04-11T08:48:30.471581Z	info	sds	Starting SDS grpc server
+2022-04-11T08:48:30.471775Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2022-04-11T08:48:30.522731Z	info	starting Http service at 127.0.0.1:15004
+2022-04-11T08:48:30.816764Z	info	Pilot SAN: [istiod.istio-system.svc]
+2022-04-11T08:48:31.013048Z	info	Starting proxy agent
+2022-04-11T08:48:31.013437Z	info	Epoch 0 starting
+2022-04-11T08:48:31.013491Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --drain-strategy immediate --parent-shutdown-time-s 60 --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2022-04-11T08:48:37.450787Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T08:48:47.973620Z	info	cache	generated new workload certificate	latency=17.560967537s ttl=23h59m57.026398936s
+2022-04-11T08:48:47.973736Z	info	cache	Root cert has changed, start rotating root cert
+2022-04-11T08:48:47.973781Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:0 Version:
+2022-04-11T08:48:47.973875Z	info	cache	returned workload trust anchor from cache	ttl=23h59m57.026131903s
+2022-04-11T08:49:15.574257Z	info	ads	ADS: new connection for node:ts-consign-price-service-859c6f45bd-flhdb.default-1
+2022-04-11T08:49:15.666371Z	info	ads	ADS: new connection for node:ts-consign-price-service-859c6f45bd-flhdb.default-2
+2022-04-11T08:49:15.666583Z	info	cache	returned workload trust anchor from cache	ttl=23h59m29.333427713s
+2022-04-11T08:49:16.174836Z	info	cache	returned workload certificate from cache	ttl=23h59m29.425598242s
+2022-04-11T08:49:16.458894Z	info	ads	SDS: PUSH request for node:ts-consign-price-service-859c6f45bd-flhdb.default resources:1 size:4.0kB resource:default
+2022-04-11T08:49:16.828819Z	info	ads	SDS: PUSH request for node:ts-consign-price-service-859c6f45bd-flhdb.default resources:1 size:1.1kB resource:ROOTCA
+2022-04-11T08:50:16.244417Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed: 13, 
+2022-04-11T08:50:24.619929Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T08:51:29.074783Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:05.318902Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:06.947572Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 30s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:52:15.948292Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 39s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:52:23.696176Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 47s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:52:28.981131Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:36.726690Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:53.481254Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:52:54.732343Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 78s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:53:05.570114Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 89s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:53:19.436564Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 103s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:53:32.814352Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 116s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:53:47.462189Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 131s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:54:00.795046Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 144s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:54:17.916454Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 161s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:54:27.764308Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:54:34.676508Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 178s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:54:36.647007Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:54:43.151389Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 186s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:54:55.080181Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:55:09.330720Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp [::1]:15090: connect: connection refused
+2022-04-11T08:55:36.229141Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 240s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:55:53.286132Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 257s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:16.100349Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 279s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:44.462139Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 308s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:57:03.726713Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 327s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:57:14.509534Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 338s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:57:16.492272Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 340s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:57:17.805901Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 341s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:58:06.906817Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 390s ago: 14, connection error: desc = "transport: authentication handshake failed: context deadline exceeded"
+2022-04-11T08:58:16.041561Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T08:59:48.101719Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T08:59:49.389732Z	warn	Envoy proxy is NOT ready: Get "http://127.0.0.1:15000/stats?usedonly&filter=^(cluster_manager\\.cds|listener_manager\\.lds)\\.(update_success|update_rejected)$": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2022-04-11T08:59:50.367431Z	info	Readiness succeeded in 11m21.169217289s
+2022-04-11T08:59:50.418808Z	info	Envoy proxy is ready
+2022-04-11T09:27:37.022786Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T09:55:28.999594Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T10:28:35.180128Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T10:56:11.428345Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012

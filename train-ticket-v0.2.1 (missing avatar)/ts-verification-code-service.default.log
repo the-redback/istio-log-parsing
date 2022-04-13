@@ -1,0 +1,80 @@
+2022-03-30T09:31:01.776124Z	info	FLAG: --concurrency="2"
+2022-03-30T09:31:01.776279Z	info	FLAG: --domain="default.svc.cluster.local"
+2022-03-30T09:31:01.776309Z	info	FLAG: --help="false"
+2022-03-30T09:31:01.776345Z	info	FLAG: --log_as_json="false"
+2022-03-30T09:31:01.776394Z	info	FLAG: --log_caller=""
+2022-03-30T09:31:01.817310Z	info	FLAG: --log_output_level="default:info"
+2022-03-30T09:31:01.817452Z	info	FLAG: --log_rotate=""
+2022-03-30T09:31:01.817496Z	info	FLAG: --log_rotate_max_age="30"
+2022-03-30T09:31:01.817539Z	info	FLAG: --log_rotate_max_backups="1000"
+2022-03-30T09:31:01.817590Z	info	FLAG: --log_rotate_max_size="104857600"
+2022-03-30T09:31:01.845827Z	info	FLAG: --log_stacktrace_level="default:none"
+2022-03-30T09:31:01.845923Z	info	FLAG: --log_target="[stdout]"
+2022-03-30T09:31:01.846014Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2022-03-30T09:31:01.849257Z	info	FLAG: --outlierLogPath=""
+2022-03-30T09:31:01.849298Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2022-03-30T09:31:01.849328Z	info	FLAG: --proxyLogLevel="warning"
+2022-03-30T09:31:01.857238Z	info	FLAG: --serviceCluster="istio-proxy"
+2022-03-30T09:31:01.857291Z	info	FLAG: --stsPort="0"
+2022-03-30T09:31:01.857334Z	info	FLAG: --templateFile=""
+2022-03-30T09:31:01.857377Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2022-03-30T09:31:01.873188Z	info	FLAG: --vklog="0"
+2022-03-30T09:31:01.873296Z	info	Version 1.13.2-91533d04e894ff86b80acd6d7a4517b144f9e19a-Clean
+2022-03-30T09:31:01.892463Z	info	Proxy role	ips=[10.244.0.12 fe80::b046:7eff:fe59:4cf] type=sidecar id=ts-verification-code-service-67bcfddb9f-9gf7k.default domain=default.svc.cluster.local
+2022-03-30T09:31:01.892667Z	info	Apply proxy config from env {}
+
+2022-03-30T09:31:01.949862Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2022-03-30T09:31:01.950063Z	info	JWT policy is third-party-jwt
+2022-03-30T09:31:01.979508Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2022-03-30T09:31:01.979677Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2022-03-30T09:31:01.979855Z	info	citadelclient	Citadel client using custom root cert: var/run/secrets/istio/root-cert.pem
+2022-03-30T09:31:01.999403Z	info	Opening status port 15020
+2022-03-30T09:31:06.970566Z	info	ads	All caches have been synced up in 5.6290216s, marking server ready
+2022-03-30T09:31:06.996604Z	info	sds	SDS server for workload certificates started, listening on "etc/istio/proxy/SDS"
+2022-03-30T09:31:07.011172Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2022-03-30T09:31:07.022431Z	info	sds	Starting SDS grpc server
+2022-03-30T09:31:07.080927Z	info	starting Http service at 127.0.0.1:15004
+2022-03-30T09:31:07.137154Z	info	Pilot SAN: [istiod.istio-system.svc]
+2022-03-30T09:31:07.400868Z	info	Starting proxy agent
+2022-03-30T09:31:07.401167Z	info	Epoch 0 starting
+2022-03-30T09:31:07.401375Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --drain-strategy immediate --parent-shutdown-time-s 60 --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2022-03-30T09:31:14.787334Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-03-30T09:31:20.383278Z	info	cache	generated new workload certificate	latency=13.4214789s ttl=23h59m58.6167662s
+2022-03-30T09:31:20.383466Z	info	cache	Root cert has changed, start rotating root cert
+2022-03-30T09:31:20.383683Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:0 Version:
+2022-03-30T09:31:20.383912Z	info	cache	returned workload trust anchor from cache	ttl=23h59m58.6161337s
+2022-03-30T09:31:30.523260Z	info	ads	ADS: new connection for node:ts-verification-code-service-67bcfddb9f-9gf7k.default-1
+2022-03-30T09:31:30.523885Z	info	cache	returned workload certificate from cache	ttl=23h59m48.4761559s
+2022-03-30T09:31:30.577019Z	info	ads	SDS: PUSH request for node:ts-verification-code-service-67bcfddb9f-9gf7k.default resources:1 size:4.0kB resource:default
+2022-03-30T09:31:30.583078Z	info	ads	ADS: new connection for node:ts-verification-code-service-67bcfddb9f-9gf7k.default-2
+2022-03-30T09:31:30.584305Z	info	cache	returned workload trust anchor from cache	ttl=23h59m48.4165208s
+2022-03-30T09:31:30.646333Z	info	ads	SDS: PUSH request for node:ts-verification-code-service-67bcfddb9f-9gf7k.default resources:1 size:1.1kB resource:ROOTCA
+2022-03-30T09:31:53.339405Z	info	Readiness succeeded in 51.9428643s
+2022-03-30T09:31:53.371013Z	info	Envoy proxy is ready
+{"upstream_local_address":"127.0.0.6:44681","downstream_remote_address":"10.244.0.7:59720","upstream_transport_failure_reason":null,"path":"/api/v1/verifycode/generate","upstream_service_time":"8163","protocol":"HTTP/1.1","bytes_received":0,"method":"GET","request_id":"c6c833d3-2a35-9e70-9aaa-4e80f0326c89","authority":"ts-verification-code-service:15678","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.83 Safari/537.36","requested_server_name":"outbound_.15678_._.ts-verification-code-service.default.svc.cluster.local","upstream_cluster":"inbound|15678||","duration":8274,"upstream_host":"10.244.0.12:15678","start_time":"2022-03-30T09:37:56.954Z","connection_termination_details":null,"response_flags":"-","response_code_details":"via_upstream","bytes_sent":1235,"route_name":"default","downstream_local_address":"10.244.0.12:15678","x_forwarded_for":null,"response_code":200}
+{"connection_termination_details":null,"bytes_sent":1285,"downstream_remote_address":"10.244.0.7:59720","upstream_service_time":"355","x_forwarded_for":null,"response_code_details":"via_upstream","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.83 Safari/537.36","protocol":"HTTP/1.1","response_code":200,"route_name":"default","authority":"ts-verification-code-service:15678","upstream_local_address":"127.0.0.6:44681","start_time":"2022-03-30T09:38:14.453Z","requested_server_name":"outbound_.15678_._.ts-verification-code-service.default.svc.cluster.local","duration":453,"path":"/api/v1/verifycode/generate","bytes_received":0,"downstream_local_address":"10.244.0.12:15678","upstream_transport_failure_reason":null,"response_flags":"-","request_id":"cc6ea762-3a3b-9b30-838f-ba06c700e4db","upstream_host":"10.244.0.12:15678","upstream_cluster":"inbound|15678||","method":"GET"}
+{"bytes_sent":4,"response_flags":"-","authority":"ts-verification-code-service:15678","upstream_transport_failure_reason":null,"upstream_service_time":"1072","response_code_details":"via_upstream","path":"/api/v1/verifycode/verify/AGMR","upstream_local_address":"127.0.0.6:44681","requested_server_name":"outbound_.15678_._.ts-verification-code-service.default.svc.cluster.local","connection_termination_details":null,"request_id":"b7cfc2e0-763d-96b0-b64b-c8ee78726dcc","x_forwarded_for":null,"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.83 Safari/537.36","downstream_remote_address":"10.244.0.238:56536","upstream_cluster":"inbound|15678||","protocol":"HTTP/1.1","start_time":"2022-03-30T09:38:41.199Z","bytes_received":0,"duration":1078,"route_name":"default","downstream_local_address":"10.244.0.12:15678","upstream_host":"10.244.0.12:15678","response_code":200,"method":"GET"}
+{"route_name":"default","path":"/api/v1/verifycode/generate","upstream_transport_failure_reason":null,"upstream_service_time":"116","start_time":"2022-03-30T09:54:51.464Z","response_code":200,"duration":117,"response_code_details":"via_upstream","x_forwarded_for":null,"requested_server_name":"outbound_.15678_._.ts-verification-code-service.default.svc.cluster.local","downstream_remote_address":"10.244.0.7:59720","bytes_received":0,"upstream_local_address":"127.0.0.6:55143","protocol":"HTTP/1.1","method":"GET","response_flags":"-","request_id":"a67ef2ce-0809-9e42-a3c9-e64f3d01dd52","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.83 Safari/537.36","upstream_cluster":"inbound|15678||","authority":"ts-verification-code-service:15678","downstream_local_address":"10.244.0.12:15678","bytes_sent":1101,"connection_termination_details":null,"upstream_host":"10.244.0.12:15678"}
+{"authority":"ts-verification-code-service:15678","upstream_cluster":"inbound|15678||","duration":209,"route_name":"default","x_forwarded_for":null,"response_code":200,"method":"GET","downstream_local_address":"10.244.0.12:15678","bytes_received":0,"protocol":"HTTP/1.1","start_time":"2022-03-30T09:55:15.445Z","response_code_details":"via_upstream","request_id":"f3b95b9c-4afb-9c3d-89c1-778a48a7ba97","upstream_transport_failure_reason":null,"upstream_local_address":"127.0.0.6:55143","response_flags":"-","requested_server_name":"outbound_.15678_._.ts-verification-code-service.default.svc.cluster.local","bytes_sent":1289,"connection_termination_details":null,"downstream_remote_address":"10.244.0.7:34232","upstream_host":"10.244.0.12:15678","upstream_service_time":"205","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.83 Safari/537.36","path":"/api/v1/verifycode/generate"}
+2022-03-30T10:02:15.532531Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-03-30T10:03:02.131967Z	warn	xdsproxy	upstream [2] terminated with unexpected error rpc error: code = Unavailable desc = keepalive ping failed to receive ACK within timeout
+{"duration":3800,"downstream_local_address":"10.244.0.12:15678","method":"GET","upstream_service_time":"3728","connection_termination_details":null,"start_time":"2022-03-30T10:03:03.595Z","path":"/api/v1/verifycode/generate","authority":"ts-verification-code-service:15678","upstream_transport_failure_reason":null,"response_flags":"-","request_id":"636cd325-8bbd-9c73-9853-00d06c3b5762","bytes_sent":1264,"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.83 Safari/537.36","response_code":200,"upstream_local_address":"127.0.0.6:46901","route_name":"default","protocol":"HTTP/1.1","downstream_remote_address":"10.244.0.7:34232","x_forwarded_for":null,"upstream_cluster":"inbound|15678||","requested_server_name":"outbound_.15678_._.ts-verification-code-service.default.svc.cluster.local","bytes_received":0,"response_code_details":"via_upstream","upstream_host":"10.244.0.12:15678"}
+2022-03-30T10:03:09.106311Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+{"response_code_details":"via_upstream","route_name":"default","response_flags":"-","downstream_remote_address":"10.244.0.7:34232","upstream_host":"10.244.0.12:15678","duration":525,"bytes_received":0,"upstream_local_address":"127.0.0.6:56075","start_time":"2022-03-30T10:06:12.668Z","response_code":200,"upstream_cluster":"inbound|15678||","request_id":"c70322ee-0229-9f3c-96ec-e4d5f56c59c4","method":"GET","x_forwarded_for":null,"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.83 Safari/537.36","connection_termination_details":null,"upstream_transport_failure_reason":null,"path":"/api/v1/verifycode/generate","requested_server_name":"outbound_.15678_._.ts-verification-code-service.default.svc.cluster.local","upstream_service_time":"514","protocol":"HTTP/1.1","downstream_local_address":"10.244.0.12:15678","authority":"ts-verification-code-service:15678","bytes_sent":1268}
+2022-03-30T10:15:14.562005Z	warn	xdsproxy	upstream [3] terminated with unexpected error rpc error: code = Unavailable desc = keepalive ping failed to receive ACK within timeout
+2022-03-30T10:15:24.082772Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012

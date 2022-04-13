@@ -1,0 +1,85 @@
+2022-04-11T08:48:02.928914Z	info	FLAG: --concurrency="2"
+2022-04-11T08:48:02.929102Z	info	FLAG: --domain="default.svc.cluster.local"
+2022-04-11T08:48:02.929125Z	info	FLAG: --help="false"
+2022-04-11T08:48:02.929136Z	info	FLAG: --log_as_json="false"
+2022-04-11T08:48:02.929141Z	info	FLAG: --log_caller=""
+2022-04-11T08:48:02.929146Z	info	FLAG: --log_output_level="default:info"
+2022-04-11T08:48:02.929151Z	info	FLAG: --log_rotate=""
+2022-04-11T08:48:02.929155Z	info	FLAG: --log_rotate_max_age="30"
+2022-04-11T08:48:02.929159Z	info	FLAG: --log_rotate_max_backups="1000"
+2022-04-11T08:48:02.929164Z	info	FLAG: --log_rotate_max_size="104857600"
+2022-04-11T08:48:02.929168Z	info	FLAG: --log_stacktrace_level="default:none"
+2022-04-11T08:48:02.929182Z	info	FLAG: --log_target="[stdout]"
+2022-04-11T08:48:02.929187Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2022-04-11T08:48:02.929191Z	info	FLAG: --outlierLogPath=""
+2022-04-11T08:48:02.929195Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2022-04-11T08:48:02.929199Z	info	FLAG: --proxyLogLevel="warning"
+2022-04-11T08:48:02.929203Z	info	FLAG: --serviceCluster="istio-proxy"
+2022-04-11T08:48:02.929208Z	info	FLAG: --stsPort="0"
+2022-04-11T08:48:02.929213Z	info	FLAG: --templateFile=""
+2022-04-11T08:48:02.929218Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2022-04-11T08:48:02.929232Z	info	FLAG: --vklog="0"
+2022-04-11T08:48:02.929245Z	info	Version 1.13.2-91533d04e894ff86b80acd6d7a4517b144f9e19a-Clean
+2022-04-11T08:48:02.929659Z	info	Proxy role	ips=[10.244.0.84 fe80::c063:88ff:feba:5006] type=sidecar id=ts-user-mongo-d44b48f9c-gkbk4.default domain=default.svc.cluster.local
+2022-04-11T08:48:03.022595Z	info	Apply proxy config from env {}
+
+2022-04-11T08:48:03.059358Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2022-04-11T08:48:03.059483Z	info	JWT policy is third-party-jwt
+2022-04-11T08:48:03.118965Z	info	Opening status port 15020
+2022-04-11T08:48:03.125092Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2022-04-11T08:48:03.125258Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2022-04-11T08:48:03.125375Z	info	citadelclient	Citadel client using custom root cert: var/run/secrets/istio/root-cert.pem
+2022-04-11T08:48:04.059527Z	info	ads	All caches have been synced up in 1.542424402s, marking server ready
+2022-04-11T08:48:04.060197Z	info	sds	SDS server for workload certificates started, listening on "etc/istio/proxy/SDS"
+2022-04-11T08:48:04.060279Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2022-04-11T08:48:04.063652Z	info	sds	Starting SDS grpc server
+2022-04-11T08:48:04.120225Z	info	Pilot SAN: [istiod.istio-system.svc]
+2022-04-11T08:48:04.124994Z	info	starting Http service at 127.0.0.1:15004
+2022-04-11T08:48:04.149878Z	info	Starting proxy agent
+2022-04-11T08:48:04.150015Z	info	Epoch 0 starting
+2022-04-11T08:48:04.150078Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --drain-strategy immediate --parent-shutdown-time-s 60 --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2022-04-11T08:48:08.491309Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T08:48:09.279079Z	info	cache	generated new workload certificate	latency=5.218215699s ttl=23h59m58.720933653s
+2022-04-11T08:48:09.279214Z	info	cache	Root cert has changed, start rotating root cert
+2022-04-11T08:48:09.279248Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:0 Version:
+2022-04-11T08:48:09.279320Z	info	cache	returned workload trust anchor from cache	ttl=23h59m58.720686724s
+2022-04-11T08:48:09.727728Z	info	ads	ADS: new connection for node:ts-user-mongo-d44b48f9c-gkbk4.default-1
+2022-04-11T08:48:09.727888Z	info	cache	returned workload trust anchor from cache	ttl=23h59m58.272118804s
+2022-04-11T08:48:09.746849Z	info	ads	SDS: PUSH request for node:ts-user-mongo-d44b48f9c-gkbk4.default resources:1 size:1.1kB resource:ROOTCA
+2022-04-11T08:48:09.853900Z	info	ads	ADS: new connection for node:ts-user-mongo-d44b48f9c-gkbk4.default-2
+2022-04-11T08:48:09.859915Z	info	cache	returned workload certificate from cache	ttl=23h59m58.140103042s
+2022-04-11T08:48:09.860203Z	info	ads	SDS: PUSH request for node:ts-user-mongo-d44b48f9c-gkbk4.default resources:1 size:4.0kB resource:default
+2022-04-11T08:48:49.097156Z	info	Readiness succeeded in 46.383339201s
+2022-04-11T08:48:49.098051Z	info	Envoy proxy is ready
+2022-04-11T08:55:26.184678Z	warn	xdsproxy	upstream [1] terminated with unexpected error rpc error: code = Unavailable desc = keepalive ping failed to receive ACK within timeout
+2022-04-11T08:56:01.569477Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 33s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:12.404425Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 44s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:16.241937Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 48s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:21.808747Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 54s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:22.670949Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 55s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:23.362408Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 55s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:28.377268Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 60s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:56:48.097817Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 80s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:57:10.394452Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 102s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:57:28.077168Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 120s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.96.182.207:15012: connect: connection refused"
+2022-04-11T08:58:02.664606Z	warning	envoy config	StreamAggregatedResources gRPC config stream closed since 155s ago: 14, connection error: desc = "transport: authentication handshake failed: context deadline exceeded"
+2022-04-11T08:58:35.054272Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T09:27:33.211981Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T09:56:57.530616Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T10:24:17.113849Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-04-11T10:54:34.596943Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
