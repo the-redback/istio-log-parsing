@@ -1,0 +1,69 @@
+2022-05-09T21:47:28.821882Z	info	FLAG: --concurrency="2"
+2022-05-09T21:47:28.822004Z	info	FLAG: --domain="default.svc.cluster.local"
+2022-05-09T21:47:28.822093Z	info	FLAG: --help="false"
+2022-05-09T21:47:28.822101Z	info	FLAG: --log_as_json="false"
+2022-05-09T21:47:28.822106Z	info	FLAG: --log_caller=""
+2022-05-09T21:47:28.822112Z	info	FLAG: --log_output_level="default:info"
+2022-05-09T21:47:28.822116Z	info	FLAG: --log_rotate=""
+2022-05-09T21:47:28.822121Z	info	FLAG: --log_rotate_max_age="30"
+2022-05-09T21:47:28.822125Z	info	FLAG: --log_rotate_max_backups="1000"
+2022-05-09T21:47:28.822130Z	info	FLAG: --log_rotate_max_size="104857600"
+2022-05-09T21:47:28.822135Z	info	FLAG: --log_stacktrace_level="default:none"
+2022-05-09T21:47:28.822172Z	info	FLAG: --log_target="[stdout]"
+2022-05-09T21:47:28.822188Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2022-05-09T21:47:28.822194Z	info	FLAG: --outlierLogPath=""
+2022-05-09T21:47:28.822198Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2022-05-09T21:47:28.822203Z	info	FLAG: --proxyLogLevel="warning"
+2022-05-09T21:47:28.822216Z	info	FLAG: --serviceCluster="istio-proxy"
+2022-05-09T21:47:28.822221Z	info	FLAG: --stsPort="0"
+2022-05-09T21:47:28.822226Z	info	FLAG: --templateFile=""
+2022-05-09T21:47:28.822230Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2022-05-09T21:47:28.822249Z	info	FLAG: --vklog="0"
+2022-05-09T21:47:28.822262Z	info	Version 1.13.2-91533d04e894ff86b80acd6d7a4517b144f9e19a-Clean
+2022-05-09T21:47:28.822659Z	info	Proxy role	ips=[10.244.0.119 fe80::70e3:4ff:feec:b07b] type=sidecar id=ts-rebook-service-fc49b557b-kr678.default domain=default.svc.cluster.local
+2022-05-09T21:47:28.822777Z	info	Apply proxy config from env {}
+
+2022-05-09T21:47:28.898703Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2022-05-09T21:47:28.898785Z	info	JWT policy is third-party-jwt
+2022-05-09T21:47:28.974548Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2022-05-09T21:47:28.974996Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2022-05-09T21:47:28.979931Z	info	citadelclient	Citadel client using custom root cert: var/run/secrets/istio/root-cert.pem
+2022-05-09T21:47:28.976121Z	info	Opening status port 15020
+2022-05-09T21:47:30.822210Z	info	ads	All caches have been synced up in 2.088629779s, marking server ready
+2022-05-09T21:47:30.822732Z	info	sds	SDS server for workload certificates started, listening on "etc/istio/proxy/SDS"
+2022-05-09T21:47:30.822785Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2022-05-09T21:47:30.824282Z	info	sds	Starting SDS grpc server
+2022-05-09T21:47:30.864722Z	info	starting Http service at 127.0.0.1:15004
+2022-05-09T21:47:30.962365Z	info	Pilot SAN: [istiod.istio-system.svc]
+2022-05-09T21:47:30.965300Z	info	Starting proxy agent
+2022-05-09T21:47:30.965464Z	info	Epoch 0 starting
+2022-05-09T21:47:30.965532Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --drain-strategy immediate --parent-shutdown-time-s 60 --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2022-05-09T21:47:44.927483Z	info	cache	generated new workload certificate	latency=14.104159974s ttl=23h59m58.072530937s
+2022-05-09T21:47:44.927545Z	info	cache	Root cert has changed, start rotating root cert
+2022-05-09T21:47:44.927572Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:0 Version:
+2022-05-09T21:47:44.927621Z	info	cache	returned workload trust anchor from cache	ttl=23h59m58.072381759s
+2022-05-09T21:47:45.106199Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-05-09T21:47:51.438489Z	info	ads	ADS: new connection for node:ts-rebook-service-fc49b557b-kr678.default-1
+2022-05-09T21:47:51.438760Z	info	cache	returned workload trust anchor from cache	ttl=23h59m51.561251258s
+2022-05-09T21:47:51.526098Z	info	ads	ADS: new connection for node:ts-rebook-service-fc49b557b-kr678.default-2
+2022-05-09T21:47:51.526424Z	info	cache	returned workload certificate from cache	ttl=23h59m51.473591899s
+2022-05-09T21:47:51.609111Z	info	ads	SDS: PUSH request for node:ts-rebook-service-fc49b557b-kr678.default resources:1 size:1.1kB resource:ROOTCA
+2022-05-09T21:47:51.609473Z	info	ads	SDS: PUSH request for node:ts-rebook-service-fc49b557b-kr678.default resources:1 size:4.0kB resource:default
+2022-05-09T21:48:05.375679Z	info	Readiness succeeded in 36.647229234s
+2022-05-09T21:48:05.391188Z	info	Envoy proxy is ready
+2022-05-09T22:16:33.896996Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012

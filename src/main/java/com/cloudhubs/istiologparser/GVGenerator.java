@@ -157,7 +157,7 @@ public class GVGenerator {
         graph.append("}");
 
 
-        try (PrintWriter out = new PrintWriter("train-ticket-log.dot")) {
+        try (PrintWriter out = new PrintWriter("kubernetes-istio-sleuth-v0.2.1.dot")) {
             out.println(graph);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -102,7 +102,7 @@ public class Controller {
                     String DestSvc = GetDestinationService(value);
                     String path = (String) map.get("path");
 //                    System.out.println(">>1<< "+ DestSvc + " " +path);
-                    if (DestSvc.equals("")) continue;
+                    if (DestSvc.equals(""))  ;
                     if (path == null) {
 //                        System.out.println(DestSvc+"---------"+path);
                         path="/";
@@ -149,7 +149,7 @@ public class Controller {
 
     public Controller() throws IOException {
         // Parse multiple file to map
-        File dir = new File("train-ticket-log");
+        File dir = new File("kubernetes-istio-sleuth-v0.2.1");
         List<String> result = GetFiles(dir.listFiles());
         for (String filePath : result) {
             System.out.println(filePath);
@@ -157,6 +157,8 @@ public class Controller {
         }
 
         GVGenerator.generate(FunctionsMap);
+
+        Graph.findCycle(FunctionsMap);
     }
 
     public static boolean isJSONValid(String jsonInString) {
