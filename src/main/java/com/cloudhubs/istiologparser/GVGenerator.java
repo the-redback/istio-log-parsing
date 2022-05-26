@@ -28,13 +28,16 @@ public class GVGenerator {
 
         graph.append("digraph endpoints_istio {").append("\n");
         graph.append("rankdir = LR;").append("\n");
+//        graph.append("ratio=\"fill\";").append("\n");
+        graph.append("size=\"8.3,11.7!\";").append("\n");
+        graph.append("margin=0;").append("\n");
         graph.append("node [shape=record];").append("\n");
 
         int clusterIndex = 0;
 
         int last = 0;
         double diff = 2.5 / (double) FunctionsMap.size(); // penwidth diff
-        System.out.println(diff);
+//        System.out.println(diff);
 
         FunctionsMap.entrySet()
                 .stream()

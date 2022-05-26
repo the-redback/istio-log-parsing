@@ -55,11 +55,14 @@ public class Controller {
             Gson gson = new Gson();
 
             String ServiceName = AssumeServiceName(filename);
+            System.out.println(ServiceName);
 
             // create a reader
             BufferedReader reader = new BufferedReader(new FileReader(filename));
             String line = reader.readLine();
+            int lines = 0, ln2=0;
             while (line != null) {
+                lines++;
                 // read next line
                 line = reader.readLine();
 
@@ -67,7 +70,7 @@ public class Controller {
                 try {
                     map = gson.fromJson(line, Map.class);
                 } catch (JsonSyntaxException e) {
-//                    e.printStackTrace();
+                    //e.printStackTrace();
                     continue;
                 }
 
@@ -94,10 +97,14 @@ public class Controller {
 //                    }
 
                 if (map.containsKey("upstream_cluster")) {
+
                     String value = (String) map.get("upstream_cluster");
                     if (!value.contains("outbound")) {
                         continue;
                     }
+
+                    ln2++;
+
 
                     String DestSvc = GetDestinationService(value);
                     String path = (String) map.get("path");
@@ -125,6 +132,7 @@ public class Controller {
 //                }
             }
             // close reader
+            System.out.println(lines + " :: "+ ln2);
             reader.close();
 
         } catch (Exception ex) {
@@ -158,7 +166,7 @@ public class Controller {
 
         GVGenerator.generate(FunctionsMap);
 
-        Graph.findCycle(FunctionsMap);
+        Graph.findMetrics(FunctionsMap);
     }
 
     public static boolean isJSONValid(String jsonInString) {
